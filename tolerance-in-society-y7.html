@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Studies Y7 – Unit 4 Lesson 2: How Tolerance Appears in Society | كيف يتجلى التسامح في المجتمع</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+  :root {
+    /* UAE Flag Colors */
+    --uae-red: #EF3340;
+    --uae-red-dark: #C8102E;
+    --uae-red-light: #FEE2E4;
+    --uae-green: #00732F;
+    --uae-green-dark: #005522;
+    --uae-green-light: #D9F1E2;
+    --uae-black: #000000;
+    --uae-black-soft: #1a1a1a;
+    --uae-white: #FFFFFF;
+    --cream: #FAFAFA;
+    --slate: #1e293b;
+    --grey: #f5f5f5;
+    --grey-border: #e0e0e0;
+    --gold-accent: #C9A227;
+    --amber: #f59e0b;
+    --teal: #0d9488;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+    --shadow-strong: 0 8px 30px rgba(0,0,0,0.12);
+    --radius: 16px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--uae-white);
+    color: var(--slate);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .ar { font-family: 'IBM Plex Sans Arabic', sans-serif; direction: rtl; text-align: right; }
+  .en { font-family: 'Nunito', sans-serif; direction: ltr; text-align: left; font-style: italic; opacity: 0.85; }
+
+  /* ── UAE FLAG SIDE STRIPES ── */
+  .flag-stripe {
+    position: fixed;
+    top: 0; bottom: 0;
+    right: 0;
+    width: 12px;
+    z-index: 100;
+    background: linear-gradient(to right,
+      var(--uae-red) 0%, var(--uae-red) 25%,
+      var(--uae-green) 25%, var(--uae-green) 50%,
+      var(--uae-white) 50%, var(--uae-white) 75%,
+      var(--uae-black) 75%, var(--uae-black) 100%);
+    border-left: 1px solid rgba(0,0,0,0.1);
+  }
+  .flag-stripe-left {
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0;
+    width: 12px;
+    z-index: 100;
+    background: linear-gradient(to right,
+      var(--uae-black) 0%, var(--uae-black) 25%,
+      var(--uae-white) 25%, var(--uae-white) 50%,
+      var(--uae-green) 50%, var(--uae-green) 75%,
+      var(--uae-red) 75%, var(--uae-red) 100%);
+    border-right: 1px solid rgba(0,0,0,0.1);
+  }
+
+  /* Watermark Flag */
+  .flag-watermark {
+    position: fixed;
+    bottom: 80px;
+    left: 30px;
+    width: 70px;
+    height: 38px;
+    opacity: 0.15;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .flag-watermark .pole { position:absolute; top:0; bottom:0; left:0; width:25%; background:var(--uae-red); }
+  .flag-watermark .stripe-r { position:absolute; top:0; left:25%; right:0; height:33.33%; background:var(--uae-red); }
+  .flag-watermark .stripe-g { position:absolute; top:33.33%; left:25%; right:0; height:33.33%; background:var(--uae-green); }
+  .flag-watermark .stripe-b { position:absolute; bottom:0; left:25%; right:0; height:33.33%; background:var(--uae-white); }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--uae-white);
+    padding: 10px 26px;
+    position: relative;
+    border-bottom: 3px solid var(--uae-red);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 18px; flex-wrap: wrap;
+  }
+  .hbrand { text-align: right; min-width: 0; position: relative; z-index: 2; }
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(to right,
+      var(--uae-red) 0%, var(--uae-red) 33.33%,
+      var(--uae-green) 33.33%, var(--uae-green) 66.66%,
+      var(--uae-black) 66.66%, var(--uae-black) 100%);
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(to right,
+      var(--uae-red) 0%, var(--uae-red) 33.33%,
+      var(--uae-green) 33.33%, var(--uae-green) 66.66%,
+      var(--uae-black) 66.66%, var(--uae-black) 100%);
+  }
+  header h1 {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: clamp(1rem, 1.75vw, 1.35rem);
+    color: var(--uae-black);
+    letter-spacing: 0;
+    line-height: 1.55;
+    font-weight: 600;
+  }
+  header h1 .red-word { color: var(--uae-red); }
+  header h1 .green-word { color: var(--uae-green); }
+  header h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(0.75rem, 1.2vw, 0.92rem);
+    color: var(--uae-red);
+    margin-top: 1px;
+  }
+  header h2 .green-en { color: var(--uae-green); }
+  .badge-row {
+    display: flex; gap: 6px; justify-content: flex-end; margin-top: 0; flex-wrap: wrap;
+    position: relative; z-index: 2;
+  }
+  .title-clock { display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    position: relative; z-index: 2; min-width: 0; }
+  @media (max-width: 1000px) {
+    header { justify-content: center; }
+    .title-clock { justify-content: center; width: 100%; }
+    .hbrand { text-align: center; }
+    .badge-row { justify-content: center; width: 100%; }
+  }
+  .badge {
+    background: var(--uae-white);
+    border: 2px solid var(--uae-red);
+    color: var(--uae-red);
+    padding: 5px 16px;
+    border-radius: 30px;
+    font-size: 0.84rem;
+    font-weight: 800;
+  }
+  .badge.green { border-color: var(--uae-green); color: var(--uae-green); }
+  .badge.black { border-color: var(--uae-black); color: var(--uae-black); }
+
+  /* ── 45 MIN CLOCK ── */
+  .clock-bar {
+    position: relative;
+    z-index: 2;
+    background: var(--uae-white);
+    border: 2px solid var(--uae-red);
+    border-radius: 50px;
+    padding: 4px 9px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    direction: ltr;
+    flex: 0 0 auto;
+  }
+  .clock-icon { font-size: 0.95rem; animation: tick 1s steps(2) infinite; }
+  @keyframes tick {
+    0% { transform: rotate(-3deg); }
+    100% { transform: rotate(3deg); }
+  }
+  .clock-display {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.88rem;
+    color: var(--uae-black);
+    min-width: 46px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-variant-numeric: tabular-nums;
+  }
+  .clock-controls { display: flex; gap: 3px; }
+  .clock-btn {
+    background: var(--uae-red);
+    border: none; color: var(--uae-white);
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.6rem; font-weight: 800;
+    line-height: 1;
+    transition: all 0.2s;
+  }
+  .clock-btn:focus-visible { outline: 2px solid var(--uae-black); outline-offset: 2px; }
+  .clock-btn:hover { background: var(--uae-red-dark); transform: scale(1.1); }
+  .clock-btn:nth-child(2) { background: var(--uae-green); }
+  .clock-btn:nth-child(2):hover { background: var(--uae-green-dark); }
+  .clock-btn:nth-child(3) { background: var(--uae-black); }
+  .clock-bar.warning { animation: pulse-warn 1s infinite; border-color: var(--amber); }
+  .clock-bar.danger { animation: pulse-danger 0.6s infinite; border-color: var(--uae-red-dark); }
+  @keyframes pulse-warn {
+    0%, 100% { box-shadow: 0 6px 20px rgba(245,158,11,0.4); }
+    50% { box-shadow: 0 6px 28px rgba(245,158,11,0.8); }
+  }
+  @keyframes pulse-danger {
+    0%, 100% { box-shadow: 0 6px 20px rgba(239,51,64,0.5); }
+    50% { box-shadow: 0 6px 28px rgba(239,51,64,1); }
+  }
+
+  /* ── NAV ── */
+  .nav-strip {
+    background: var(--uae-black);
+    display: flex; overflow-x: auto; white-space: nowrap;
+    scrollbar-width: none;
+  }
+  .nav-strip::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    flex: 1; min-width: 100px;
+    padding: 12px 7px;
+    border: none; background: transparent;
+    color: rgba(255,255,255,0.55);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.74rem; font-weight: 700;
+    cursor: pointer; transition: all 0.2s;
+    border-bottom: 3px solid transparent;
+    text-align: center;
+  }
+  .nav-btn:hover, .nav-btn.active {
+    color: var(--uae-white);
+    border-bottom-color: var(--uae-red);
+    background: rgba(239,51,64,0.15);
+  }
+
+  /* ── PROGRESS ── */
+  .progress-row { padding: 14px 22px 6px; max-width: 1000px; margin: 0 auto; }
+  .progress-wrap {
+    background: var(--grey);
+    border-radius: 30px; height: 8px; overflow: hidden;
+  }
+  .progress-bar {
+    height: 100%; border-radius: 30px;
+    background: linear-gradient(90deg,
+      var(--uae-red) 0%, var(--uae-red) 33.33%,
+      var(--uae-green) 33.33%, var(--uae-green) 66.66%,
+      var(--uae-black) 66.66%);
+    transition: width 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  .progress-label {
+    font-size: 0.78rem; font-weight: 800; color: var(--uae-red);
+    text-align: right; margin-top: 4px;
+  }
+
+  /* ── MAIN ── */
+  main { max-width: 1000px; margin: 0 auto; padding: 16px 22px 60px; position: relative; z-index: 2; }
+
+  /* ── SECTION CARD ── */
+  .section-card {
+    background: var(--uae-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 28px;
+    overflow: hidden;
+    animation: fadeUp 0.45s ease both;
+    display: none;
+    border: 1.5px solid var(--grey-border);
+    position: relative;
+  }
+  .section-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(to right,
+      var(--uae-red) 0%, var(--uae-red) 33.33%,
+      var(--uae-green) 33.33%, var(--uae-green) 66.66%,
+      var(--uae-black) 66.66%, var(--uae-black) 100%);
+  }
+  .section-card.visible { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .card-header {
+    display: flex; align-items: center; gap: 14px;
+    padding: 18px 24px 14px;
+    border-bottom: 2px solid var(--grey-border);
+  }
+  .card-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+  .card-title-wrap { flex: 1; }
+  .card-title {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1.02rem;
+    color: var(--uae-black);
+    letter-spacing: 0;
+    font-weight: 700;
+    direction: rtl;
+    text-align: right;
+  }
+  .card-title-en {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.85rem;
+    color: var(--uae-red);
+    margin-top: 2px;
+  }
+  .section-number {
+    background: var(--uae-red);
+    color: var(--uae-white);
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.78rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .time-chip {
+    background: var(--uae-green);
+    color: var(--uae-white);
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 14px;
+    margin-left: 8px;
+    font-family: 'Fredoka One', cursive;
+  }
+  .card-body { padding: 24px; }
+
+  /* ── TEACHER BOX ── */
+  .teacher-box {
+    background: var(--uae-green-light);
+    border-right: 5px solid var(--uae-green);
+    border-radius: 10px;
+    padding: 13px 17px;
+    margin-bottom: 18px;
+    display: flex; gap: 11px; align-items: flex-start;
+    direction: rtl;
+  }
+  .teacher-box .icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 1px; }
+  .teacher-box .label {
+    font-size: 0.7rem; font-weight: 900; color: var(--uae-green-dark);
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;
+    direction: ltr;
+  }
+  .teacher-box p.ar { font-size: 0.95rem; color: var(--uae-black); font-weight: 700; }
+  .teacher-box p.en { font-size: 0.82rem; color: var(--uae-green-dark); font-weight: 600; margin-top: 4px; direction: ltr; text-align: left; }
+
+  /* ── BIG QUESTION ── */
+  .big-question {
+    padding: 20px !important;
+    background: linear-gradient(135deg, var(--uae-red), var(--uae-red-dark));
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .big-question::before {
+    content: none;
+    position: absolute;
+    top: 10px; right: 14px;
+    font-size: 1.8rem;
+    opacity: 0.3;
+  }
+  .big-question .q-text-ar {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: clamp(1rem, 1.9vw, 1.3rem);
+    color: var(--uae-white); line-height: 1.7;
+    font-weight: 600;
+    direction: rtl;
+  }
+  .big-question .q-text-en {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(0.88rem, 1.7vw, 1.1rem);
+    color: var(--uae-white);
+    line-height: 1.5;
+    margin-top: 12px;
+    opacity: 0.95;
+  }
+
+  /* ── REVEAL BTN ── */
+  .reveal-btn {
+    background: var(--uae-red);
+    color: var(--uae-white); border: none; border-radius: 30px;
+    padding: 11px 24px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem; font-weight: 800;
+    cursor: pointer; margin-top: 14px;
+    box-shadow: 0 4px 14px rgba(239,51,64,0.3);
+    transition: all 0.2s;
+  }
+  .reveal-btn:hover { background: var(--uae-red-dark); transform: translateY(-2px); }
+
+  /* ── OBJECTIVES ── */
+  .obj-list { list-style: none; }
+  .obj-item {
+    background: var(--uae-white);
+    border-right: 5px solid var(--uae-red);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    direction: rtl;
+  }
+  .obj-item:nth-child(2) { border-right-color: var(--uae-green); }
+  .obj-item .ar { font-size: 1rem; font-weight: 600; color: var(--uae-black); }
+  .obj-item .en {
+    font-size: 0.85rem; margin-top: 4px; color: #555;
+    direction: ltr; text-align: left;
+  }
+
+  /* ── VOCAB CARDS (FLIP) ── */
+  .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .vocab-card {
+    background: transparent;
+    perspective: 1000px;
+    height: 210px;
+    cursor: pointer;
+  }
+  .vocab-inner {
+    position: relative;
+    width: 100%; height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  .vocab-card.flipped .vocab-inner { transform: rotateY(180deg); }
+  .vocab-front, .vocab-back {
+    position: absolute;
+    width: 100%; height: 100%;
+    backface-visibility: hidden;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  }
+  .vocab-front {
+    background: var(--uae-white);
+    border: 2.5px solid var(--uae-red);
+  }
+  .vocab-back {
+    background: linear-gradient(135deg, var(--uae-green), var(--uae-green-dark));
+    color: var(--uae-white);
+    transform: rotateY(180deg);
+  }
+  .vocab-icon { font-size: 2.4rem; margin-bottom: 8px; }
+  .vocab-word {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--uae-red);
+    direction: rtl;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .vocab-en {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.9rem;
+    color: var(--uae-black);
+  }
+  .vocab-hint {
+    font-size: 0.7rem;
+    color: var(--uae-red);
+    margin-top: 8px;
+    font-weight: 700;
+    opacity: 0.7;
+  }
+  .vocab-back-ar {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 0.92rem;
+    direction: rtl;
+    line-height: 1.5;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .vocab-back-en {
+    font-size: 0.76rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.9);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 6px;
+    margin-top: 4px;
+    direction: ltr;
+  }
+
+  /* ── PASSAGE ── */
+  .passage {
+    background: var(--uae-white);
+    border: 2.5px solid var(--uae-green);
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    position: relative;
+  }
+  .passage::before {
+    content: none;
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--uae-white);
+    padding: 0 8px;
+    font-size: 1.2rem;
+  }
+  .passage-ar {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1.08rem;
+    direction: rtl;
+    color: var(--uae-black);
+    line-height: 2;
+    text-align: right;
+    font-weight: 600;
+  }
+  .passage-en {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.92rem;
+    direction: ltr;
+    color: #555;
+    line-height: 1.7;
+    text-align: left;
+    font-style: italic;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 2px dashed var(--uae-green);
+    font-weight: 600;
+  }
+  .hl {
+    background: var(--uae-red-light);
+    color: var(--uae-red-dark);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 800;
+  }
+  .hl-green {
+    background: var(--uae-green-light);
+    color: var(--uae-green-dark);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 800;
+  }
+  .hl-black {
+    background: #f5f5f5;
+    color: var(--uae-black);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 800;
+    border-bottom: 2px solid var(--uae-black);
+  }
+
+  /* ── COLOR LEGEND ── */
+  .color-legend {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    direction: rtl; margin-top: 10px;
+  }
+  .legend-pill {
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+  }
+  .legend-pill.red { background: var(--uae-red-light); color: var(--uae-red-dark); }
+  .legend-pill.green { background: var(--uae-green-light); color: var(--uae-green-dark); }
+  .legend-pill.black { background: #f5f5f5; color: var(--uae-black); border-bottom: 2px solid var(--uae-black); }
+
+  /* ── Q&A ── */
+  .qa-item {
+    background: var(--uae-white);
+    border: 1.5px solid var(--grey-border);
+    border-right: 5px solid var(--uae-red);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .qa-q-ar {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    direction: rtl;
+    color: var(--uae-black);
+    text-align: right;
+    margin-bottom: 6px;
+  }
+  .qa-q-letter {
+    color: var(--uae-red);
+    margin-left: 6px;
+    font-weight: 900;
+  }
+  .qa-q-en {
+    font-size: 0.82rem;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 8px;
+    direction: ltr;
+    text-align: left;
+  }
+  .qa-ans {
+    background: var(--uae-green-light);
+    border-right: 4px solid var(--uae-green);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 10px;
+    display: none;
+  }
+  .qa-ans.shown { display: block; animation: fadeUp 0.4s ease; }
+  .qa-ans-ar {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 0.97rem;
+    direction: rtl;
+    color: var(--uae-green-dark);
+    text-align: right;
+    line-height: 1.7;
+    font-weight: 700;
+  }
+  .qa-ans-en {
+    font-size: 0.83rem;
+    color: var(--uae-green-dark);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0,115,47,0.2);
+    line-height: 1.6;
+    font-style: italic;
+    direction: ltr;
+    text-align: left;
+  }
+
+  /* ── MC QUESTIONS ── */
+  .mc-item {
+    background: var(--uae-white);
+    border: 1.5px solid var(--grey-border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .mc-q-ar {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    direction: rtl;
+    color: var(--uae-black);
+    text-align: right;
+    margin-bottom: 4px;
+  }
+  .mc-q-en {
+    font-size: 0.8rem;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+  .mc-opts { display: flex; flex-direction: column; gap: 8px; }
+  .mc-opt {
+    background: var(--cream);
+    border: 2px solid var(--grey-border);
+    border-radius: 10px;
+    padding: 11px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 0.97rem;
+    font-weight: 700;
+    direction: rtl;
+    text-align: right;
+    color: var(--uae-black);
+  }
+  .mc-opt .en-opt {
+    font-size: 0.76rem; color: #777; opacity: 0.85;
+    margin-top: 3px; font-style: italic;
+    font-family: 'Nunito', sans-serif;
+    direction: ltr; text-align: left; font-weight: 600;
+  }
+  .mc-opt:hover:not(.disabled) {
+    background: var(--uae-red-light);
+    border-color: var(--uae-red);
+    transform: translateX(-3px);
+  }
+  .mc-opt.correct {
+    background: var(--uae-green-light);
+    border-color: var(--uae-green);
+    color: var(--uae-green-dark);
+  }
+  .mc-opt.wrong {
+    background: var(--uae-red-light);
+    border-color: var(--uae-red);
+    color: var(--uae-red-dark);
+  }
+  .mc-opt.disabled { cursor: not-allowed; opacity: 0.6; }
+  .mc-feedback {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: none;
+    direction: rtl;
+    text-align: right;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+  }
+  .mc-feedback.show { display: block; animation: fadeUp 0.3s ease; }
+  .mc-feedback.good { background: var(--uae-green-light); color: var(--uae-green-dark); }
+  .mc-feedback.bad { background: var(--uae-red-light); color: var(--uae-red-dark); }
+  .mc-reset-btn {
+    background: transparent;
+    border: 2px solid var(--uae-black);
+    color: var(--uae-black);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 8px;
+    display: none;
+  }
+  .mc-reset-btn.show { display: inline-block; }
+
+  /* ── ASSESSMENT FOR LEARNING ── */
+  .afl-banner {
+    background: var(--uae-black);
+    color: var(--uae-white);
+    border-radius: 14px;
+    padding: 22px 24px;
+    text-align: center;
+    margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+    border: 2.5px solid var(--uae-black);
+  }
+  .afl-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(to right,
+      var(--uae-red) 0%, var(--uae-red) 33.33%,
+      var(--uae-green) 33.33%, var(--uae-green) 66.66%,
+      var(--uae-white) 66.66%, var(--uae-white) 100%);
+  }
+  .afl-banner h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+    color: var(--uae-white);
+  }
+  .afl-banner p { font-size: 0.92rem; opacity: 0.95; }
+  .afl-banner p.ar {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1rem; font-weight: 700;
+    margin-top: 6px;
+    color: var(--uae-red);
+  }
+
+  /* ── INFO / THINK BOXES ── */
+  .info-box {
+    background: var(--uae-red-light);
+    border-right: 5px solid var(--uae-red);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    direction: rtl;
+  }
+  .info-box.green-box {
+    background: var(--uae-green-light);
+    border-right-color: var(--uae-green);
+  }
+  .info-box.black-box {
+    background: var(--uae-black);
+    color: var(--uae-white);
+    border-right-color: var(--uae-red);
+  }
+  .info-box.gold-box {
+    background: #FFF8E1;
+    border-right-color: var(--gold-accent);
+  }
+  .info-box .ar { font-size: 0.98rem; font-weight: 800; color: var(--uae-black); }
+  .info-box.black-box .ar { color: var(--uae-white); }
+  .info-box .en {
+    font-size: 0.83rem; color: #555;
+    margin-top: 4px; direction: ltr; text-align: left;
+  }
+  .info-box.black-box .en { color: rgba(255,255,255,0.8); }
+
+  /* ── QUOTE BOX (for UAE official) ── */
+  .quote-box {
+    background: var(--uae-white);
+    border: 2.5px solid var(--uae-red);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 14px 0;
+    position: relative;
+  }
+  .quote-box::before {
+    content: '❝';
+    position: absolute;
+    top: -15px; right: 20px;
+    background: var(--uae-white);
+    padding: 0 8px;
+    font-size: 2rem;
+    color: var(--uae-red);
+    font-weight: 900;
+  }
+  .quote-ar {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    direction: rtl; text-align: right;
+    font-size: 1.05rem; font-weight: 700;
+    color: var(--uae-black); line-height: 1.8;
+  }
+  .quote-en {
+    font-size: 0.85rem; color: #555;
+    font-style: italic;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--uae-red);
+    line-height: 1.6;
+  }
+
+  /* ── POTATO ACTIVITY CARDS ── */
+  .potato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 700px) { .potato-grid { grid-template-columns: 1fr; } }
+  .potato-card {
+    background: var(--uae-white);
+    border: 2.5px solid var(--uae-green);
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .potato-card .icon { font-size: 2.4rem; margin-bottom: 8px; }
+  .potato-card .ar {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 1rem; font-weight: 800;
+    color: var(--uae-black); margin-bottom: 4px;
+  }
+  .potato-card .en {
+    font-size: 0.82rem; color: #555;
+    font-style: italic;
+  }
+
+  /* ── EXIT TICKET ── */
+  .exit-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width: 700px) { .exit-grid { grid-template-columns: 1fr; } }
+  .exit-card {
+    border-radius: 14px;
+    padding: 20px 16px;
+    text-align: center;
+    cursor: pointer;
+    border: 2.5px solid;
+    transition: all 0.2s;
+    background: var(--uae-white);
+  }
+  .exit-c1 { border-color: var(--uae-green); }
+  .exit-c1:hover { background: var(--uae-green-light); }
+  .exit-c2 { border-color: var(--gold-accent); }
+  .exit-c2:hover { background: #FFF8E1; }
+  .exit-c3 { border-color: var(--uae-red); }
+  .exit-c3:hover { background: var(--uae-red-light); }
+  .exit-card:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
+  .exit-card.selected { transform: scale(1.03); box-shadow: 0 6px 22px rgba(0,0,0,0.18); }
+  .exit-c1.selected { background: var(--uae-green-light); }
+  .exit-c2.selected { background: #FFF8E1; }
+  .exit-c3.selected { background: var(--uae-red-light); }
+  .ec-emoji { font-size: 2.4rem; }
+  .ec-label { font-family: 'Fredoka One', cursive; font-size: 1.05rem; margin-top: 6px; color: var(--uae-black); }
+  .ec-label-ar {
+    font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 1.05rem;
+    font-weight: 900; direction: rtl; margin-top: 4px;
+    color: var(--uae-black);
+  }
+  .ec-text { font-size: 0.82rem; margin-top: 6px; font-weight: 700; color: #555; }
+  .ec-text-ar {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    direction: rtl; font-size: 0.85rem;
+    font-weight: 700; margin-top: 3px;
+    color: var(--uae-black);
+  }
+  .exit-confirm {
+    margin-top: 14px;
+    padding: 14px 18px;
+    background: var(--uae-green-light);
+    border-right: 4px solid var(--uae-green);
+    border-radius: 8px;
+    display: none;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+  .exit-confirm.show { display: block; animation: fadeUp 0.3s ease; }
+  .conf-msg { font-size: 0.95rem; color: var(--uae-green-dark); font-weight: 800; }
+  .conf-msg-en {
+    font-size: 0.82rem; color: #555;
+    margin-top: 4px; direction: ltr;
+    text-align: left; font-style: italic; font-weight: 600;
+  }
+
+  /* ── CELEBRATION ── */
+  .celebrate {
+    background: var(--uae-white);
+    border-radius: 18px;
+    padding: 32px 24px;
+    text-align: center;
+    color: var(--uae-black);
+    border: 3px solid var(--grey-border);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  .celebrate::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 8px;
+    background: linear-gradient(to right,
+      var(--uae-red) 0%, var(--uae-red) 33.33%,
+      var(--uae-green) 33.33%, var(--uae-green) 66.66%,
+      var(--uae-black) 66.66%, var(--uae-black) 100%);
+  }
+  .celebrate::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 8px;
+    background: linear-gradient(to right,
+      var(--uae-black) 0%, var(--uae-black) 33.33%,
+      var(--uae-green) 33.33%, var(--uae-green) 66.66%,
+      var(--uae-red) 66.66%, var(--uae-red) 100%);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    border-top: 1.5px dashed var(--grey-border);
+    margin: 18px 0;
+  }
+
+  /* ── G2 / G3 ── */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width: 700px) {
+    .g2, .g3 { grid-template-columns: 1fr; }
+  }
+
+  /* ── KHDA STANDARD ── */
+  .khda {
+    background: var(--uae-black);
+    color: var(--uae-white);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 12px;
+    font-size: 0.78rem;
+  }
+  .khda .lbl {
+    color: var(--uae-red);
+    font-weight: 900; font-size: 0.72rem;
+  }
+  .khda .ar { color: var(--uae-white); }
+  .khda .en-text {
+    font-size: 0.78rem; color: rgba(255,255,255,0.75);
+    margin-top: 2px; font-style: italic;
+    direction: ltr;
+  }
+
+  /* ── TABLE ── */
+  .culture-table {
+    width: 100%; border-collapse: collapse;
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    border: 2px solid var(--uae-black);
+  }
+  .culture-table th {
+    background: var(--uae-red);
+    color: var(--uae-white);
+    padding: 12px;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 900;
+    direction: rtl;
+    text-align: center;
+  }
+  .culture-table th.col-other { background: var(--uae-black); }
+  .culture-table th.col-cat { background: var(--uae-green); }
+  .culture-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--grey-border);
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-size: 0.92rem;
+    direction: rtl;
+    text-align: center;
+    color: var(--uae-black);
+    font-weight: 700;
+    background: var(--uae-white);
+  }
+  .culture-table td.cat {
+    background: var(--uae-green-light);
+    color: var(--uae-green-dark);
+    font-weight: 900;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 18px;
+    background: var(--uae-black);
+    color: var(--uae-white);
+    font-size: 0.85rem;
+    font-weight: 700;
+    position: relative;
+  }
+  footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(to right,
+      var(--uae-red) 0%, var(--uae-red) 33.33%,
+      var(--uae-green) 33.33%, var(--uae-green) 66.66%,
+      var(--uae-white) 66.66%, var(--uae-white) 100%);
+  }
+</style>
+</head>
+<body>
+
+<!-- ── UAE FLAG SIDE STRIPES ── -->
+<div class="flag-stripe-left"></div>
+<div class="flag-stripe"></div>
+
+<!-- ── Watermark Flag ── -->
+<div class="flag-watermark">
+  <div class="pole"></div>
+  <div class="stripe-r"></div>
+  <div class="stripe-g"></div>
+  <div class="stripe-b"></div>
+</div>
+
+<!-- ── 45-MIN CLOCK ── -->
+<header>
+  <div class="title-clock">
+  <div class="hbrand">
+    <h1 class="ar">كيف يتجلى <span class="red-word">التسامح</span> في <span class="green-word">المجتمع</span>؟</h1>
+    <h2>How Does <span>Tolerance</span> Appear in <span class="green-en">Society</span>?</h2>
+  </div>
+<div class="clock-bar" id="clockBar">
+  <span class="clock-icon">⏰</span>
+  <div class="clock-display" id="clockDisplay">45:00</div>
+  <div class="clock-controls">
+    <button class="clock-btn" onclick="startClock()" title="Start">▶</button>
+    <button class="clock-btn" onclick="pauseClock()" title="Pause">⏸</button>
+    <button class="clock-btn" onclick="resetClock()" title="Reset">↻</button>
+  </div>
+</div>
+  </div>
+  <div class="badge-row">
+    <span class="badge">📚 Social Studies</span>
+    <span class="badge green">🎓 Year 7</span>
+    <span class="badge black">📖 Unit 4 · Lesson 2</span>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav-strip" id="navStrip"></nav>
+
+<!-- PROGRESS -->
+<div class="progress-row">
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar" style="width:8%"></div></div>
+  <div class="progress-label" id="progressLabel">Section 1 of 13</div>
+</div>
+
+<main>
+
+<!-- ══════════════════════════════════
+     S1 — TITLE & OBJECTIVES
+══════════════════════════════════ -->
+<div class="section-card visible" id="sec-1">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--uae-red-light);color:var(--uae-red);">🎯</div>
+    <div class="card-title-wrap">
+      <div class="card-title">عنوان الدرس وأهداف التعلم</div>
+      <div class="card-title-en">Lesson Title & Learning Objectives</div>
+    </div>
+    <span class="time-chip">⏱ 2 min</span>
+    <span class="section-number">1 / 13</span>
+  </div>
+  <div class="card-body">
+    <div class="big-question">
+      <div class="q-text-ar">كيف يتجلى التسامح في المجتمع؟</div>
+      <div class="q-text-en">How Does Tolerance Appear in Society?</div>
+    </div>
+
+    <h3 style="font-family:'IBM Plex Sans Arabic',sans-serif;color:var(--uae-red);font-size:1.2rem;margin-bottom:6px;direction:rtl;text-align:right;">📋 نواتج التعلم</h3>
+    <p style="font-family:'Fredoka One',cursive;color:var(--uae-green);font-size:0.95rem;margin-bottom:14px;">Learning Outcomes</p>
+
+    <ul class="obj-list">
+      <li class="obj-item">
+        <div class="ar">✅ يشرح دور الخلفية الاجتماعية في تعزيز (أو إضعاف) قيم التسامح والاحترام والمساواة بين الناس</div>
+        <div class="en">✅ Explain the role of social background in strengthening (or weakening) the values of tolerance, respect, and equality among people.</div>
+      </li>
+      <li class="obj-item">
+        <div class="ar">✅ يُظهر الاحترام لأوجه الاختلاف وعدم التمييز في معاملة الأقران داخل الصف وعلى مستوى المدرسة</div>
+        <div class="en">✅ Show respect for differences and avoid discrimination in dealing with peers in class and across the school.</div>
+      </li>
+    </ul>
+
+    <div class="khda">
+      <span class="lbl">📌 KHDA STANDARD · معايير هيئة المعرفة</span>
+      <div class="ar" style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:0.9rem;margin-top:6px;direction:rtl;text-align:right;font-weight:700;">يُظهر السلوك المحترم تجاه الآخرين ويرفض التمييز بكافة أشكاله</div>
+      <div class="en-text">Demonstrates respectful behaviour toward others and rejects all forms of discrimination.</div>
+    </div>
+
+    <div class="teacher-box">
+      <span class="icon">🎓</span>
+      <div>
+        <div class="label">Teacher Note · ملاحظة للمعلم</div>
+        <p class="ar">ابدأ الدرس بسؤال: "هل سبق أن أصدرت حكماً سريعاً على شخص ثم اكتشفت أنك مخطئ؟"</p>
+        <p class="en">Start by asking: "Have you ever made a snap judgement about someone and then realised you were wrong?"</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     S2 — VOCABULARY
+══════════════════════════════════ -->
+<div class="section-card" id="sec-2">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--uae-green-light);color:var(--uae-green);">📚</div>
+    <div class="card-title-wrap">
+      <div class="card-title">المفردات الجديدة</div>
+      <div class="card-title-en">New Vocabulary</div>
+    </div>
+    <span class="time-chip">⏱ 5 min</span>
+    <span class="section-number">2 / 13</span>
+  </div>
+  <div class="card-body">
+    <p style="font-family:'IBM Plex Sans Arabic',sans-serif;direction:rtl;text-align:right;font-size:1rem;font-weight:700;color:var(--uae-red);margin-bottom:6px;">اضغط على كل بطاقة لتقلبها وترى المعنى</p>
+    <p style="font-style:italic;color:#555;font-size:0.88rem;margin-bottom:14px;">Click each card to flip it and see the meaning.</p>
+
+    <div class="vocab-grid">
+
+      <div class="vocab-card" onclick="flipCard(this)">
+        <div class="vocab-inner">
+          <div class="vocab-front">
+            <div class="vocab-icon">🌍</div>
+            <div class="vocab-word">التَّنَوُّع</div>
+            <div class="vocab-en">Diversity</div>
+            <div class="vocab-hint">👁 Click to flip</div>
+          </div>
+          <div class="vocab-back">
+            <div class="vocab-back-ar">وجود اختلافات متعددة بين الناس في الثقافة واللغة والدين والعادات</div>
+            <div class="vocab-back-en">The existence of many differences among people in culture, language, religion, and customs.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vocab-card" onclick="flipCard(this)">
+        <div class="vocab-inner">
+          <div class="vocab-front">
+            <div class="vocab-icon">👀</div>
+            <div class="vocab-word">النظر من زوايا متعددة</div>
+            <div class="vocab-en">Multiple Perspectives</div>
+            <div class="vocab-hint">👁 Click to flip</div>
+          </div>
+          <div class="vocab-back">
+            <div class="vocab-back-ar">القدرة على فهم موضوع ما من أكثر من وجهة نظر واحدة</div>
+            <div class="vocab-back-en">The ability to understand a topic from more than one point of view.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vocab-card" onclick="flipCard(this)">
+        <div class="vocab-inner">
+          <div class="vocab-front">
+            <div class="vocab-icon">⚡</div>
+            <div class="vocab-word">الحُكم السريع</div>
+            <div class="vocab-en">Snap Judgement</div>
+            <div class="vocab-hint">👁 Click to flip</div>
+          </div>
+          <div class="vocab-back">
+            <div class="vocab-back-ar">إصدار رأي أو حكم على شخص قبل التعرف عليه جيداً</div>
+            <div class="vocab-back-en">Forming an opinion about someone before getting to know them well.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vocab-card" onclick="flipCard(this)">
+        <div class="vocab-inner">
+          <div class="vocab-front">
+            <div class="vocab-icon">📋</div>
+            <div class="vocab-word">سياسة</div>
+            <div class="vocab-en">Policy</div>
+            <div class="vocab-hint">👁 Click to flip</div>
+          </div>
+          <div class="vocab-back">
+            <div class="vocab-back-ar">مجموعة من القواعد والإرشادات التي تتبعها مؤسسة أو منظمة</div>
+            <div class="vocab-back-en">A set of rules and guidelines followed by an institution or organisation.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="info-box black-box" style="margin-top:14px;">
+      <div class="ar">💡 <strong>تذكّر:</strong> الحُكم السريع يمكن أن يمنعنا من التسامح مع الآخرين وفهمهم!</div>
+      <div class="en">💡 <strong>Remember:</strong> Snap judgements can prevent us from being tolerant and understanding others!</div>
+    </div>
+
+    <div class="teacher-box" style="margin-top:14px;">
+      <span class="icon">🎓</span>
+      <div>
+        <div class="label">Teacher Note · ملاحظة للمعلم</div>
+        <p class="ar">اطلب من الطلاب نطق الكلمة قبل قلب البطاقة. اسأل: أي كلمة هي الأهم في درس اليوم؟</p>
+        <p class="en">Ask students to say each word before flipping the card. Then ask: which word is most important for today's lesson?</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     S3 — WARM UP (Yes/No Visitors)
+══════════════════════════════════ -->
+<div class="section-card" id="sec-3">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--uae-red-light);color:var(--uae-red);">🔥</div>
+    <div class="card-title-wrap">
+      <div class="card-title">فكّر وتحدّث — الزائران</div>
+      <div class="card-title-en">Warm-Up: The Two Visitors</div>
+    </div>
+    <span class="time-chip">⏱ 4 min</span>
+    <span class="section-number">3 / 13</span>
+  </div>
+  <div class="card-body">
+    <p style="font-family:'IBM Plex Sans Arabic',sans-serif;direction:rtl;text-align:right;font-size:1rem;font-weight:700;color:var(--uae-red);margin-bottom:4px;">نشاط 1 — تفعيل المعرفة</p>
+    <p style="font-style:italic;color:#555;font-size:0.88rem;margin-bottom:14px;">Activity 1 — Think and Talk</p>
+
+    <div class="passage">
+      <div class="passage-ar">
+        أنت على وشك الالتقاء بزائرَيْن لصفّك! فكّر في الأسئلة التي يمكنك طرحها عليهما لمعرفة المزيد عنهما وعن ثقافتهما. ولكن تذكّر: يمكن لهما الإجابة بـ <span class="hl">«نعم» أو «لا» فقط</span> عن أسئلتك.
+      </div>
+      <div class="passage-en">
+        You are about to meet two visitors to your class! Think of questions you can ask them to learn more about them and their culture. But remember: they can <strong>only answer "Yes" or "No"</strong> to your questions.
+      </div>
+    </div>
+
+    <div class="info-box gold-box">
+      <div class="ar" style="font-size:1.05rem;">🤔 ما الأسئلة التي ستطرحها على الزائرَيْن؟</div>
+      <div class="en">What questions will you ask the two visitors? (Yes/No answers only!)</div>
+    </div>
+
+    <div class="g3">
+      <div class="potato-card">
+        <div class="icon">1️⃣</div>
+        <div class="ar">فكّر في 3 أسئلة</div>
+        <div class="en">Think of 3 questions</div>
+      </div>
+      <div class="potato-card" style="border-color:var(--uae-red);">
+        <div class="icon">2️⃣</div>
+        <div class="ar">شارك زميلك</div>
+        <div class="en">Share with a partner</div>
+      </div>
+      <div class="potato-card" style="border-color:var(--uae-black);">
+        <div class="icon">3️⃣</div>
+        <div class="ar">اختاروا أفضل سؤالين</div>
+        <div class="en">Choose the best 2 questions</div>
+      </div>
+    </div>
+
+    <div class="teacher-box">
+      <span class="icon">🎓</span>
+      <div>
+        <div class="label">Teacher Note · ملاحظة للمعلم</div>
+        <p class="ar">اطلب من الطلاب التفكير بصمت لدقيقة، ثم مشاركة زميل، ثم مشاركة الصف.</p>
+        <p class="en">Use Think-Pair-Share: silent thinking 1 min → discuss with partner → share with class.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     S4 — STORY: KHALED & ABDULLAH
+══════════════════════════════════ -->
+<div class="section-card" id="sec-4">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--uae-green-light);color:var(--uae-green);">📖</div>
+    <div class="card-title-wrap">
+      <div class="card-title">قصة خالد وعبد الله</div>
+      <div class="card-title-en">Reading: Khaled & Abdullah's Story</div>
+    </div>
+    <span class="time-chip">⏱ 6 min</span>
+    <span class="section-number">4 / 13</span>
+  </div>
+  <div class="card-body">
+    <p style="font-family:'IBM Plex Sans Arabic',sans-serif;direction:rtl;text-align:right;font-size:1rem;font-weight:700;color:var(--uae-red);margin-bottom:4px;">نشاط 2 — قصة الحذاء</p>
+    <p style="font-style:italic;color:#555;font-size:0.88rem;margin-bottom:14px;">Activity 2 — The Boots Story</p>
+
+    <div class="passage">
+      <div class="passage-ar">
+        لم يكن <span class="hl">خالد</span> ينصت إلى المعلم. بل كان يُمعن النظر في <span class="hl-green">حذائه الرياضي الجديد</span>. فمدرسته كانت تفرض <span class="hl-black">سياسة زيّ موحّد صارمة</span> ما عدا على الأحذية، لذا كان خالد مصمّماً على الاستفادة من ذلك. كان زهو خالد بحذائه كفيلاً بأن يخفّف عنه صعوبة يومه الدراسي.
+        <br><br>
+        فجأة، قدّم المعلم <span class="hl">صبياً جديداً</span>. رفع خالد نظره إليه. كان <span class="hl">عبد الله</span> يقف أمام الطلبة، وهو يسحب قدماً نحو الأخرى بقلق. عبد الله لم يكن ينتعل حذاءً رياضياً لامعاً مثل خالد، بل كان حذاؤه <span class="hl-green">تقليدياً صلباً أسود يغطيه التراب</span>. ففكّر خالد مستنتجاً: <span class="hl">«إنه غير مثير للاهتمام»</span>. كان ذلك كافياً حتى لا يبذل أي جهد للتعرف إليه.
+        <br><br>
+        في وقت لاحق، ذهب خالد للعب مع أصدقائه. ورصد جسماً صغيراً تتأرجح حقيبة مدرسية على كتفه يتجه نحو أحد المنازل. شاهد الجسم يصل إلى الباب الأمامي متثاقلاً ويجلس على عتبته. أدرك خالد حينها: «إنه عبد الله!» انحنى عبد الله ليخلع حذاءه، فشعر خالد باضطراب غريب وهو يفكر: <span class="hl-black">«لا عجب في أن يكون حذاء عبد الله بهذا الشكل إذا كان يسير كل هذه المسافة يومياً... وأنا من اعتقد أنه غير أنيق!»</span>
+        <br><br>
+        ترك خالد أصدقاءه يكملون اللعب وسار نحو عبد الله ليقابله، هذه المرة، <span class="hl-black">كما يجدر به.</span>
+      </div>
+      <div class="passage-en">
+        <strong>Khaled</strong> wasn't listening to the teacher. He was gazing at his <strong>new sports shoes</strong>. His school had a <strong>strict uniform policy</strong> — except for shoes — so Khaled was determined to make the most of it. Pride in his shoes was enough to ease the difficulty of his school day.<br><br>
+        Suddenly, the teacher introduced a <strong>new boy</strong>. Khaled looked up. <strong>Abdullah</strong> stood before the class, anxiously shifting one foot to the other. Abdullah was not wearing a shiny sports shoe like Khaled — his were <strong>traditional, hard, black, and covered with dust</strong>. Khaled thought: <strong>"He's uninteresting."</strong> That was enough for him to make no effort to know him.<br><br>
+        Later, Khaled went to play with his friends. He spotted a small figure with a school bag swinging on his shoulder, heading toward one of the houses. He watched as the figure trudged to the front door and sat on the step. Khaled realised: "It's Abdullah!" Abdullah bent down to remove his shoes, and Khaled felt a strange discomfort, thinking: <strong>"No wonder Abdullah's shoes look like that if he walks all this distance every day… and I thought he wasn't stylish!"</strong><br><br>
+        Khaled left his friends still playing and walked toward Abdullah to meet him — this time, <strong>as he should have.</strong>
+      </div>
+    </div>
+
+    <div class="color-legend">
+      <span class="legend-pill red">🔴 شخصيات رئيسية · Key Characters</span>
+      <span class="legend-pill green">🟢 تفاصيل مهمة · Key Details</span>
+      <span class="legend-pill black">⚫ التحوّل · The Change</span>
+    </div>
+
+    <div class="teacher-box" style="margin-top:14px;">
+      <span class="icon">🎓</span>
+      <div>
+        <div class="label">Teacher Note · ملاحظة للمعلم</div>
+        <p class="ar">اقرأ القصة بصوت عالٍ. اسأل الطلاب عن معنى الألوان. دعهم يتنبؤون بالنهاية قبل قراءتها.</p>
+        <p class="en">Read aloud together. Ask: what do the colours represent? Have students predict the ending before you reach it.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     S5 — STORY QUESTIONS A & B
+══════════════════════════════════ -->
+<div class="section-card" id="sec-5">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--uae-red-light);color:var(--uae-red);">✏️</div>
+    <div class="card-title-wrap">
+      <div class="card-title">أسئلة القصة — أ، ب</div>
+      <div class="card-title-en">Story Questions A & B</div>
+    </div>
+    <span class="time-chip">⏱ 5 min</span>
+    <span class="section-number">5 / 13</span>
+  </div>
+  <div class="card-body">
+    <p style="font-family:'IBM Plex Sans Arabic',sans-serif;direction:rtl;text-align:right;font-size:0.95rem;font-weight:700;color:var(--uae-red);margin-bottom:4px;">ناقش زميلك أولاً، ثم اضغط لكشف الإجابة النموذجية</p>
+    <p style="font-style:italic;color:#555;font-size:0.85rem;margin-bottom:14px;">Discuss with a partner first, then click to reveal the model answer.</p>
+
+    <div class="qa-item">
+      <div class="qa-q-ar"><span class="qa-q-letter">أ.</span> في رأيك، لِمَ ظنّ خالد أن الحذاء مهم للغاية؟</div>
+      <div class="qa-q-en">A. In your opinion, why did Khaled think the shoe was so important?</div>
+      <button class="reveal-btn" onclick="toggleReveal('qa-a', this)">👁 Show Answer · أظهر الإجابة</button>
+      <div class="qa-ans" id="qa-a">
+        <div class="qa-ans-ar">لأن الحذاء كان يمثّل هويته وأناقته — فقد كانت سياسة المدرسة تلزمهم بالزي الموحد، لكنها أتاحت لهم حرية اختيار الحذاء. لذا أصبح الحذاء <strong>وسيلته الوحيدة للتعبير عن شخصيته</strong> وتميّزه بين زملائه.</div>
+        <div class="qa-ans-en">Because the shoe represented his identity and style. Since the school required a uniform, the shoe was <strong>his only way to express his personality</strong> and stand out among classmates.</div>
+      </div>
+    </div>
+
+    <div class="qa-item" style="border-right-color:var(--uae-green);">
+      <div class="qa-q-ar"><span class="qa-q-letter" style="color:var(--uae-green);">ب.</span> كيف كان انطباع خالد الأولي عن عبد الله؟</div>
+      <div class="qa-q-en">B. What was Khaled's initial impression of Abdullah?</div>
+      <button class="reveal-btn" onclick="toggleReveal('qa-b', this)" style="background:var(--uae-green);">👁 Show Answer · أظهر الإجابة</button>
+      <div class="qa-ans" id="qa-b">
+        <div class="qa-ans-ar">كان انطباع خالد <strong>سلبياً وسريعاً</strong> — ظنّ أن عبد الله «غير مثير للاهتمام» لمجرد أن حذاءه كان تقليدياً وقديماً. وهذا مثال على <strong>الحُكم السريع</strong> بناءً على المظهر فقط.</div>
+        <div class="qa-ans-en">Khaled's initial impression was <strong>negative and quick</strong> — he judged Abdullah as "uninteresting" simply because of his worn shoes. This is an example of a <strong>snap judgement</strong> based on appearance alone.</div>
+      </div>
+    </div>
+
+    <div class="teacher-box">
+      <span class="icon">🎓</span>
+      <div>
+        <div class="label">Teacher Note · ملاحظة للمعلم</div>
+        <p class="ar">دع الطلاب يناقشون في أزواج أولاً، ثم يكشفون الإجابة. شجّع الآراء المختلفة.</p>
+        <p class="en">Students discuss in pairs FIRST. Then reveal model answer. Encourage different viewpoints.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     S6 — STORY QUESTIONS C, D, E
+══════════════════════════════════ -->
+<div class="section-card" id="sec-6">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--uae-red-light);color:var(--uae-red);">✏️</div>
+    <div class="card-title-wrap">
+      <div class="card-title">أسئلة القصة — ج، د، هـ</div>
+      <div class="card-title-en">Story Questions C, D, E</div>
+    </div>
+    <span class="time-chip">⏱ 6 min</span>
+    <span class="section-number">6 / 13</span>
+  </div>
+  <div class="card-body">
+
+    <div class="qa-item">
+      <div class="qa-q-ar"><span class="qa-q-letter">ج.</span> في رأيك، لِمَ أصدر خالد حكماً سريعاً مثل هذا؟</div>
+      <div class="qa-q-en">C. In your opinion, why did Khaled make such a snap judgement?</div>
+      <button class="reveal-btn" onclick="toggleReveal('qa-c', this)">👁 Show Answer · أظهر الإجابة</button>
+      <div class="qa-ans" id="qa-c">
+        <div class="qa-ans-ar">لأن خالد كان يحكم على الناس من خلال <strong>مظهرهم فقط</strong>، دون أن يأخذ في الحسبان ظروفهم وخلفيتهم الاجتماعية. ولأنه لم يعطِ نفسه الوقت للتعرف على عبد الله بشكل حقيقي.</div>
+        <div class="qa-ans-en">Because Khaled was judging people <strong>by appearance only</strong>, without considering their circumstances or social background. He didn't give himself time to truly get to know Abdullah.</div>
+      </div>
+    </div>
+
+    <div class="qa-item" style="border-right-color:var(--uae-green);">
+      <div class="qa-q-ar"><span class="qa-q-letter" style="color:var(--uae-green);">د.</span> «شعر خالد باضطراب غريب» — ما المقصود بهذا؟</div>
+      <div class="qa-q-en">D. "Khaled felt a strange discomfort" — what does this mean?</div>
+      <button class="reveal-btn" onclick="toggleReveal('qa-d', this)" style="background:var(--uae-green);">👁 Show Answer · أظهر الإجابة</button>
+      <div class="qa-ans" id="qa-d">
+        <div class="qa-ans-ar">يقصد أن خالد شعر <strong>بالذنب والندم</strong> عندما أدرك أنه كان مخطئاً في حكمه على عبد الله. هذا الاضطراب هو <strong>الضمير</strong> الذي يقول له أن تصرفه لم يكن صحيحاً.</div>
+        <div class="qa-ans-en">It means Khaled felt <strong>guilt and regret</strong> when he realised he had been wrong about Abdullah. This discomfort was his <strong>conscience</strong> telling him his attitude had been unfair.</div>
+      </div>
+    </div>
+
+    <div class="qa-item" style="border-right-color:var(--uae-black);">
+      <div class="qa-q-ar"><span class="qa-q-letter" style="color:var(--uae-black);">هـ.</span> هل تخطر ببالك حادثة أصدرت فيها حكماً سريعاً على أحدهم وغيّرت رأيك؟</div>
+      <div class="qa-q-en">E. Can you think of a time when you made a snap judgement about someone and changed your mind?</div>
+      <button class="reveal-btn" onclick="toggleReveal('qa-e', this)" style="background:var(--uae-black);">👁 Show Idea · فكرة للمناقشة</button>
+      <div class="qa-ans" id="qa-e">
+        <div class="qa-ans-ar">هذا سؤال شخصي — شارك تجربتك مع زملائك. <strong>الجميع أصدر حكماً سريعاً في مرحلة ما!</strong> المهم أن نتعلم من هذه التجارب ونتوقف عن الحكم على الآخرين بناءً على مظهرهم فقط.</div>
+        <div class="qa-ans-en">This is a personal question — share your experience with classmates. <strong>Everyone has made snap judgements!</strong> The important thing is to learn from these experiences and stop judging by appearance alone.</div>
+      </div>
+    </div>
+
+    <div class="teacher-box">
+      <span class="icon">🎓</span>
+      <div>
+        <div class="label">Teacher Note · ملاحظة للمعلم</div>
+        <p class="ar">السؤال (هـ) مفتوح — شجع الطلاب على مشاركة تجارب شخصية. لا توجد إجابة صحيحة أو خاطئة.</p>
+        <p class="en">Question E is open — encourage students to share personal experiences. No right or wrong answer.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     S7 — ⭐ ASSESSMENT FOR LEARNING
+══════════════════════════════════ -->
+<div class="section-card" id="sec-7">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--uae-black);color:var(--uae-white);">🎯</div>
+    <div class="card-title-wrap">
+      <div class="card-title">تقييم تعلّمي — مراجعة منتصف الدرس</div>
+      <div class="card-title-en">Assessment for Learning — Mid-Lesson Check</div>
+    </div>
+    <span class="time-chip">⏱ 5 min</span>
+    <span class="section-number">7 / 13</span>
+  </div>
+  <div class="card-body">
+
+    <div class="afl-banner">
+      <h3>🎯 Assessment for Learning</h3>
+      <p>Quick check to see what you've learned so far!</p>
+      <p class="ar">مراجعة سريعة لنرى ماذا تعلّمتَ حتى الآن!</p>
+    </div>
+
+    <div class="mc-item" id="afl-q1">
+      <div class="mc-q-ar">1. ما معنى "الحُكم السريع"؟</div>
+      <div class="mc-q-en">1. What does "Snap Judgement" mean?</div>
+      <div class="mc-opts">
+        <div class="mc-opt" onclick="checkAnswer(this, false, 'afl-q1')">
+          <div>أ. التفكير بعمق قبل إصدار أي رأي</div>
+          <div class="en-opt">a. Thinking deeply before forming an opinion</div>
+        </div>
+        <div class="mc-opt" onclick="checkAnswer(this, true, 'afl-q1')">
+          <div>ب. إصدار رأي على شخص قبل التعرف عليه</div>
+          <div class="en-opt">b. Forming an opinion about someone before getting to know them</div>
+        </div>
+        <div class="mc-opt" onclick="checkAnswer(this, false, 'afl-q1')">
+          <div>ج. احترام آراء الآخرين دائماً</div>
+          <div class="en-opt">c. Always respecting others' opinions</div>
+        </div>
+      </div>
+      <div class="mc-feedback" id="afl-q1-fb"></div>
+      <button class="mc-reset-btn" id="afl-q1-rst" onclick="resetMC('afl-q1')">↻ Try Again · أعد المحاولة</button>
+    </div>
+
+    <div class="mc-item" id="afl-q2">
+      <div class="mc-q-ar">2. لماذا غيّر خالد رأيه في عبد الله؟</div>
+      <div class="mc-q-en">2. Why did Khaled change his opinion of Abdullah?</div>
+      <div class="mc-opts">
+        <div class="mc-opt" onclick="checkAnswer(this, false, 'afl-q2')">
+          <div>أ. لأنه تحدث معه وعرف أنه لطيف</div>
+          <div class="en-opt">a. Because he spoke to him and found him kind</div>
+        </div>
+        <div class="mc-opt" onclick="checkAnswer(this, true, 'afl-q2')">
+          <div>ب. لأنه رأى أن عبد الله يسير مسافة طويلة يومياً</div>
+          <div class="en-opt">b. Because he saw Abdullah walks a long distance every day</div>
+        </div>
+        <div class="mc-opt" onclick="checkAnswer(this, false, 'afl-q2')">
+          <div>ج. لأن المعلم أخبره بذلك</div>
+          <div class="en-opt">c. Because the teacher told him</div>
+        </div>
+      </div>
+      <div class="mc-feedback" id="afl-q2-fb"></div>
+      <button class="mc-reset-btn" id="afl-q2-rst" onclick="resetMC('afl-q2')">↻ Try Again · أعد المحاولة</button>
+    </div>
+
+    <div class="mc-item" id="afl-q3">
+      <div class="mc-q-ar">3. ماذا يعني "الاضطراب الغريب" الذي شعر به خالد؟</div>
+      <div class="mc-q-en">3. What does the "strange discomfort" Khaled felt mean?</div>
+      <div class="mc-opts">
+        <div class="mc-opt" onclick="checkAnswer(this, false, 'afl-q3')">
+          <div>أ. الخوف من عبد الله</div>
+          <div class="en-opt">a. Fear of Abdullah</div>
+        </div>
+        <div class="mc-opt" onclick="checkAnswer(this, true, 'afl-q3')">
+          <div>ب. الشعور بالذنب والندم على حكمه السريع</div>
+          <div class="en-opt">b. Feeling guilt and regret over his snap judgement</div>
+        </div>
+        <div class="mc-opt" onclick="checkAnswer(this, false, 'afl-q3')">
+          <div>ج. الإعجاب بحذاء عبد الله</div>
+          <div class="en-opt">c. Admiration for Abdullah's shoes</div>
+        </div>
+      </div>
+      <div class="mc-feedback" id="afl-q3-fb"></div>
+      <button class="mc-reset-btn" id="afl-q3-rst" onclick="resetMC('afl-q3')">↻ Try Again · أعد المحاولة</button>
+    </div>
+
+    <div class="mc-item" id="afl-q4">
+      <div class="mc-q-ar">4. صح أم خطأ: الحُكم السريع يساعدنا على فهم الآخرين بشكل أفضل.</div>
+      <div class="mc-q-en">4. True or False: Snap judgements help us understand others better.</div>
+      <div class="mc-opts">
+        <div class="mc-opt" onclick="checkAnswer(this, false, 'afl-q4')">
+          <div>✅ صحيح / True</div>
+        </div>
+        <div class="mc-opt" onclick="checkAnswer(this, true, 'afl-q4')">
+          <div>❌ خطأ / False</div>
+        </div>
+      </div>
+      <div class="mc-feedback" id="afl-q4-fb"></div>
+      <button class="mc-reset-btn" id="afl-q4-rst" onclick="resetMC('afl-q4')">↻ Try Again · أعد المحاولة</button>
+    </div>
+
+    <div class="teacher-box">
+      <span class="icon">🎓</span>
+      <div>
+        <div class="label">Assessment Note · ملاحظة التقييم</div>
+        <p class="ar">لاحظ من يجيب بسرعة ومن يحتاج مساعدة. استخدم هذه الإجابات لتعديل النصف الثاني من الدرس.</p>
+        <p class="en">Note who answers quickly and who needs help. Use this feedback to adapt the second half of the lesson.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     S8 — UAE DIVERSITY
+══════════════════════════════════ -->
+<div class="section-card" id="sec-8">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--uae-green-light);color:var(--uae-green);">🏫</div>
+    <div class="card-title-wrap">
+      <div class="card-title">التنوع في مدارس الإمارات</div>
+      <div class="card-title-en">Diversity in UAE Schools</div>
+    </div>
+    <span class="time-chip">⏱ 5 min</span>
+    <span class="section-number">8 / 13</span>
+  </div>
+  <div class="card-body">
+    <p style="font-family:'IBM Plex Sans Arabic',sans-serif;direction:rtl;text-align:right;font-size:1rem;font-weight:700;color:var(--uae-red);margin-bottom:4px;">نشاط 3 — اقرأ ثم أجب</p>
+    <p style="font-style:italic;color:#555;font-size:0.88rem;margin-bottom:14px;">Activity 3 — Read, then answer.</p>
+
+    <div class="passage">
+      <div class="passage-ar">
+        تُدرك دولة الإمارات العربية المتحدة أهمية <span class="hl">إعداد طلابها للتنوع</span> الذي سيقابلونه في مهنهم المستقبلية. لقد صرّح أحد مسؤولي المدارس قائلاً:
+      </div>
+
+      <div class="quote-box">
+        <div class="quote-ar">«علينا إعداد طلابنا للتغيّر السريع وللعمل بتعاون مع أفراد لم يلتقوهم من قبل، وهؤلاء قد يكونون من <span class="hl">جميع أنحاء العالم</span>.»</div>
+        <div class="quote-en">"We must prepare our students for rapid change and for working cooperatively with people they have never met before — people who may come from <strong>all over the world</strong>."</div>
+      </div>
+
+      <div class="passage-ar">
+        وأضاف: «نحن نفتخر بالتنوع والتقبّل الموجودَيْن في مجتمعنا المدرسي. أمّا المتعلمون في صفوفنا الدراسية، فمن الطبيعي بالنسبة إليهم العمل مع طلبة آخرين من مختلف أنحاء العالم ممن يحملون وجهات نظر متعددة، فذلك سيحثّهم على أن يكونوا <span class="hl-green">مرنين في تفكيرهم، ومتوازنين ذوي ذهن منفتح، وواعين للاختلاف بين الثقافات</span>.»
+      </div>
+      <div class="passage-en">
+        He added: "We take pride in the diversity and acceptance in our school community. For the learners in our classrooms, it is natural to work with students from different parts of the world who hold multiple perspectives. This encourages them to become <strong>flexible thinkers, balanced and open-minded, and aware of cultural differences</strong>."
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q-ar"><span class="qa-q-letter">السؤال:</span> اشرح تأثير عيش المرء في مجتمع متنوع ثقافياً في صغره في تهيئته ليصبح مواطناً عالمياً.</div>
+      <div class="qa-q-en">Question: Explain the effect of growing up in a culturally diverse community on becoming a global citizen.</div>
+      <button class="reveal-btn" onclick="toggleReveal('qa-uae', this)">👁 Show Answer · أظهر الإجابة</button>
+      <div class="qa-ans" id="qa-uae">
+        <div class="qa-ans-ar">عيش المرء في مجتمع متنوع يجعله أكثر <strong>تقبّلاً للاختلاف</strong>، ويعلّمه كيفية التواصل مع أشخاص من ثقافات مختلفة. كما يجعل تفكيره أكثر <strong>مرونة وانفتاحاً</strong>، ويُعدّه للعمل في بيئات دولية متعددة في المستقبل.</div>
+        <div class="qa-ans-en">Living in a diverse community makes a person more <strong>accepting of difference</strong> and teaches them to communicate with people from different cultures. It also makes their thinking more <strong>flexible and open</strong>, preparing them for international work environments in the future.</div>
+      </div>
+    </div>
+
+    <div class="teacher-box">
+      <span class="icon">🎓</span>
+      <div>
+        <div class="label">Teacher Note · ملاحظة للمعلم</div>
+        <p class="ar">اربط بتجربة الطلاب في مدرستهم. اسأل: كم جنسية يوجد في صفّكم؟</p>
+        <p class="en">Connect to students' experience in this school. Ask: how many nationalities are in YOUR class?</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     S9 — POTATO ACTIVITY
+══════════════════════════════════ -->
+<div class="section-card" id="sec-9">
+  <div class="card-header">
+    <div class="card-icon" style="background:#FFF8E1;color:var(--gold-accent);">🥔</div>
+    <div class="card-title-wrap">
+      <div class="card-title">التنوع مثل البطاطا!</div>
+      <div class="card-title-en">Diversity is Like a Potato!</div>
+    </div>
+    <span class="time-chip">⏱ 6 min</span>
+    <span class="section-number">9 / 13</span>
+  </div>
+  <div class="card-body">
+    <p style="font-family:'IBM Plex Sans Arabic',sans-serif;direction:rtl;text-align:right;font-size:1rem;font-weight:700;color:var(--uae-red);margin-bottom:4px;">نشاط 4 و 5 — التنوع في الطبيعة وفي البشر</p>
+    <p style="font-style:italic;color:#555;font-size:0.88rem;margin-bottom:14px;">Activities 4 & 5 — Diversity in nature and in people.</p>
+
+    <div class="info-box gold-box">
+      <div class="ar" style="font-size:1.05rem;">🥔 <strong>نشاط 4:</strong> قف في دائرة وافحص ثمرة البطاطا الخاصة بك بعناية. هل لها أي سمات خاصة؟</div>
+      <div class="en"><strong>Activity 4:</strong> Stand in a circle and examine your potato carefully. Does it have any special features?</div>
+    </div>
+
+    <div class="potato-grid" style="margin-top:14px;">
+      <div class="potato-card">
+        <div class="icon">🥔</div>
+        <div class="ar">افحص شكلها وحجمها</div>
+        <div class="en">Examine its shape and size</div>
+      </div>
+      <div class="potato-card" style="border-color:var(--uae-red);">
+        <div class="icon">🎒</div>
+        <div class="ar">ضعها في كيس مع البقية ثم أوجدها!</div>
+        <div class="en">Put it in a bag with the rest, then find yours!</div>
+      </div>
+    </div>
+
+    <div class="info-box black-box" style="margin-top:14px;">
+      <div class="ar">🌍 <strong>اعلم!</strong> هناك ما يزيد على <span class="hl">4500 نوع مختلف من البطاطا</span> في العالم! كل هذا التنوع موجود في نوع واحد من الخضار!</div>
+      <div class="en"><strong>Did You Know?</strong> There are over <strong>4,500 different types of potato</strong> in the world! All this diversity exists in just one type of vegetable!</div>
+    </div>
+
+    <div class="qa-item" style="margin-top:14px;border-right-color:var(--gold-accent);">
+      <div class="qa-q-ar">🌟 <strong>نشاط 5:</strong> ما المهارات والصفات التي تميّزك؟ وما الذي ترغب في تعلّمه عن الثقافات الأخرى؟</div>
+      <div class="qa-q-en">Activity 5: What skills and qualities make you unique? What would you like to learn about other cultures?</div>
+      <button class="reveal-btn" onclick="toggleReveal('qa-potato', this)" style="background:var(--gold-accent);">👁 Show Main Idea · الفكرة الرئيسية</button>
+      <div class="qa-ans" id="qa-potato">
+        <div class="qa-ans-ar">التنوع يعني <strong>إظهار الاحترام للاختلاف</strong>. ثمة اختلافات بين جميع الناس — وكذلك فإن <strong>لكل امرئ مهارات تميّزه</strong>. يمكن للجميع أن يحققوا إنجازات عديدة من خلال العمل معاً والتعلم بعضهم من بعض!</div>
+        <div class="qa-ans-en">Diversity means <strong>showing respect for difference</strong>. Everyone is different — and <strong>everyone has unique skills</strong>. We can all achieve great things by working together and learning from each other!</div>
+      </div>
+    </div>
+
+    <div class="teacher-box">
+      <span class="icon">🎓</span>
+      <div>
+        <div class="label">Teacher Note · ملاحظة للمعلم</div>
+        <p class="ar">نشاط البطاطا عملي — أحضر بطاطا لكل طالب! نشاط 5 تأمل كتابي.</p>
+        <p class="en">The potato activity is hands-on — each student gets a potato! Activity 5 is a written reflection.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     S10 — REVIEW QUIZ
+══════════════════════════════════ -->
+<div class="section-card" id="sec-10">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--uae-red-light);color:var(--uae-red);">🎮</div>
+    <div class="card-title-wrap">
+      <div class="card-title">اختبر نفسك!</div>
+      <div class="card-title-en">Final Quick Quiz</div>
+    </div>
+    <span class="time-chip">⏱ 4 min</span>
+    <span class="section-number">10 / 13</span>
+  </div>
+  <div class="card-body">
+    <p style="font-family:'IBM Plex Sans Arabic',sans-serif;direction:rtl;text-align:right;font-size:0.95rem;font-weight:700;color:var(--uae-red);margin-bottom:14px;">اختر الإجابة الصحيحة</p>
+
+    <div class="mc-item" id="fq-q1">
+      <div class="mc-q-ar">1. ما الذي يجعل الإمارات نموذجاً للتنوع؟</div>
+      <div class="mc-q-en">1. What makes the UAE a model of diversity?</div>
+      <div class="mc-opts">
+        <div class="mc-opt" onclick="checkAnswer(this, false, 'fq-q1')">
+          <div>أ. لأنها دولة غنية</div>
+          <div class="en-opt">a. Because it is a rich country</div>
+        </div>
+        <div class="mc-opt" onclick="checkAnswer(this, true, 'fq-q1')">
+          <div>ب. لأن مدارسها تضم طلاباً من جميع أنحاء العالم</div>
+          <div class="en-opt">b. Because its schools include students from all over the world</div>
+        </div>
+        <div class="mc-opt" onclick="checkAnswer(this, false, 'fq-q1')">
+          <div>ج. لأنها تملك تاريخاً طويلاً</div>
+          <div class="en-opt">c. Because it has a long history</div>
+        </div>
+      </div>
+      <div class="mc-feedback" id="fq-q1-fb"></div>
+      <button class="mc-reset-btn" id="fq-q1-rst" onclick="resetMC('fq-q1')">↻ Try Again · أعد المحاولة</button>
+    </div>
+
+    <div class="mc-item" id="fq-q2">
+      <div class="mc-q-ar">2. ما الدرس الذي نتعلمه من نشاط البطاطا؟</div>
+      <div class="mc-q-en">2. What lesson do we learn from the potato activity?</div>
+      <div class="mc-opts">
+        <div class="mc-opt" onclick="checkAnswer(this, false, 'fq-q2')">
+          <div>أ. كل البطاطا متشابهة في الشكل</div>
+          <div class="en-opt">a. All potatoes look the same</div>
+        </div>
+        <div class="mc-opt" onclick="checkAnswer(this, true, 'fq-q2')">
+          <div>ب. كل شيء فريد بطريقته والاختلاف يُثري المجتمع</div>
+          <div class="en-opt">b. Everything is unique in its own way, and difference enriches society</div>
+        </div>
+        <div class="mc-opt" onclick="checkAnswer(this, false, 'fq-q2')">
+          <div>ج. البطاطا أهم من البشر</div>
+          <div class="en-opt">c. Potatoes are more important than people</div>
+        </div>
+      </div>
+      <div class="mc-feedback" id="fq-q2-fb"></div>
+      <button class="mc-reset-btn" id="fq-q2-rst" onclick="resetMC('fq-q2')">↻ Try Again · أعد المحاولة</button>
+    </div>
+
+    <div class="mc-item" id="fq-q3">
+      <div class="mc-q-ar">3. كيف نتجنّب الحُكم السريع على الآخرين؟</div>
+      <div class="mc-q-en">3. How do we avoid making snap judgements about others?</div>
+      <div class="mc-opts">
+        <div class="mc-opt" onclick="checkAnswer(this, false, 'fq-q3')">
+          <div>أ. بتجاهلهم تماماً</div>
+          <div class="en-opt">a. By ignoring them completely</div>
+        </div>
+        <div class="mc-opt" onclick="checkAnswer(this, true, 'fq-q3')">
+          <div>ب. بأخذ الوقت الكافي للتعرف عليهم وفهم خلفياتهم</div>
+          <div class="en-opt">b. By taking time to know them and understand their background</div>
+        </div>
+        <div class="mc-opt" onclick="checkAnswer(this, false, 'fq-q3')">
+          <div>ج. بالحكم على ملابسهم فقط</div>
+          <div class="en-opt">c. By judging only their clothes</div>
+        </div>
+      </div>
+      <div class="mc-feedback" id="fq-q3-fb"></div>
+      <button class="mc-reset-btn" id="fq-q3-rst" onclick="resetMC('fq-q3')">↻ Try Again · أعد المحاولة</button>
+    </div>
+
+    <div class="teacher-box">
+      <span class="icon">🎓</span>
+      <div>
+        <div class="label">Teacher Note · ملاحظة للمعلم</div>
+        <p class="ar">يجيب الطلاب فردياً أولاً، ثم ناقش الإجابات الخاطئة جماعياً.</p>
+        <p class="en">Students answer individually first, then discuss wrong answers as a class.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     S11 — EXIT TICKET
+══════════════════════════════════ -->
+<div class="section-card" id="sec-11">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--uae-green-light);color:var(--uae-green);">🎟️</div>
+    <div class="card-title-wrap">
+      <div class="card-title">بطاقة الخروج</div>
+      <div class="card-title-en">Exit Ticket</div>
+    </div>
+    <span class="time-chip">⏱ 1 min</span>
+    <span class="section-number">11 / 13</span>
+  </div>
+  <div class="card-body">
+    <p style="font-family:'IBM Plex Sans Arabic',sans-serif;direction:rtl;text-align:right;font-size:1rem;font-weight:800;color:var(--uae-red);margin-bottom:4px;">كيف تشعر بفهمك للدرس اليوم؟</p>
+    <p style="font-style:italic;color:#555;font-size:0.88rem;margin-bottom:16px;">How do you feel about your understanding today?</p>
+
+    <div class="exit-grid">
+      <div class="exit-card exit-c1" onclick="selectExit(this,'got-it')">
+        <div class="ec-emoji">🌟</div>
+        <div class="ec-label">Got It!</div>
+        <div class="ec-label-ar">فهمتُ كل شيء</div>
+        <div class="ec-text">I can explain snap judgement and diversity.</div>
+        <div class="ec-text-ar">أستطيع شرح الحكم السريع والتنوع</div>
+      </div>
+      <div class="exit-card exit-c2" onclick="selectExit(this,'almost')">
+        <div class="ec-emoji">🤔</div>
+        <div class="ec-label">Almost There</div>
+        <div class="ec-label-ar">تقريباً فهمت</div>
+        <div class="ec-text">I have one or two questions.</div>
+        <div class="ec-text-ar">عندي سؤال أو سؤالين</div>
+      </div>
+      <div class="exit-card exit-c3" onclick="selectExit(this,'lost')">
+        <div class="ec-emoji">🙋</div>
+        <div class="ec-label">Need More Help</div>
+        <div class="ec-label-ar">أحتاج إلى مساعدة</div>
+        <div class="ec-text">I'd like to go over this again.</div>
+        <div class="ec-text-ar">أريد إعادة الشرح</div>
+      </div>
+    </div>
+    <div class="exit-confirm" id="exitConfirm"></div>
+
+    <hr class="divider">
+
+    <div style="background:var(--uae-white);border:2px solid var(--uae-black);border-radius:14px;padding:14px 18px;">
+      <p style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:1rem;font-weight:900;color:var(--uae-red);margin-bottom:4px;direction:rtl;text-align:right;">أستطيع أن… ✅</p>
+      <p style="font-size:0.85rem;font-weight:800;color:var(--uae-green);margin-bottom:10px;">I can…</p>
+      <div class="g2" style="gap:8px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="width:17px;height:17px;min-width:17px;border:2px solid var(--uae-red);border-radius:4px;background:var(--uae-white);"></div>
+          <div>
+            <div style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:0.9rem;font-weight:700;direction:rtl;text-align:right;color:var(--uae-black);">أشرح معنى الحُكم السريع والتنوع</div>
+            <div style="font-size:0.78rem;color:#555;font-style:italic;">Explain snap judgement and diversity</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="width:17px;height:17px;min-width:17px;border:2px solid var(--uae-green);border-radius:4px;background:var(--uae-white);"></div>
+          <div>
+            <div style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:0.9rem;font-weight:700;direction:rtl;text-align:right;color:var(--uae-black);">أحلّل تصرفات خالد في القصة</div>
+            <div style="font-size:0.78rem;color:#555;font-style:italic;">Analyse Khaled's actions in the story</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="width:17px;height:17px;min-width:17px;border:2px solid var(--uae-red);border-radius:4px;background:var(--uae-white);"></div>
+          <div>
+            <div style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:0.9rem;font-weight:700;direction:rtl;text-align:right;color:var(--uae-black);">أعطي أمثلة على احترام التنوع في مدرستي</div>
+            <div style="font-size:0.78rem;color:#555;font-style:italic;">Give examples of respecting diversity in my school</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="width:17px;height:17px;min-width:17px;border:2px solid var(--uae-black);border-radius:4px;background:var(--uae-white);"></div>
+          <div>
+            <div style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:0.9rem;font-weight:700;direction:rtl;text-align:right;color:var(--uae-black);">أُدرك أن الاختلاف يُثري المجتمع</div>
+            <div style="font-size:0.78rem;color:#555;font-style:italic;">Understand that difference enriches society</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="teacher-box" style="margin-top:14px;">
+      <span class="icon">🎓</span>
+      <div>
+        <div class="label">Homework · الواجب</div>
+        <p class="ar">📝 اكتب فقرة قصيرة عن موقف عشتَه في مدرستك يدل على احترام التنوع.</p>
+        <p class="en">📝 Write a short paragraph about an experience in your school that shows respect for diversity.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     S12 — WELL DONE
+══════════════════════════════════ -->
+<div class="section-card" id="sec-12">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--uae-red-light);color:var(--uae-red);">🌟</div>
+    <div class="card-title-wrap">
+      <div class="card-title">أحسنتم!</div>
+      <div class="card-title-en">Well Done!</div>
+    </div>
+    <span class="section-number">12 / 13</span>
+  </div>
+  <div class="card-body">
+    <div class="celebrate">
+      <div style="font-size:clamp(48px,8vw,86px);margin-bottom:12px;">🤝 🥔</div>
+      <p style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--uae-red);margin-bottom:4px;">أحسنتم!</p>
+      <p style="font-family:'Fredoka One',cursive;font-size:clamp(1.4rem,3.5vw,2rem);color:var(--uae-green);margin-bottom:14px;">Well Done!</p>
+      <p style="font-size:0.95rem;color:var(--uae-black);margin-bottom:6px;font-family:'IBM Plex Sans Arabic',sans-serif;direction:rtl;font-weight:700;">أكملتم الوحدة 4 — الدرس 2: كيف يتجلى التسامح في المجتمع</p>
+      <p style="font-size:0.88rem;color:#555;margin-bottom:18px;font-style:italic;">You've completed Unit 4 — Lesson 2: How Tolerance Appears in Society</p>
+      <div class="g3" style="gap:12px;">
+        <div style="background:var(--uae-red-light);border:2px solid var(--uae-red);border-radius:14px;padding:15px;text-align:center;">
+          <div style="font-size:1.9rem;margin-bottom:5px;">⚡</div>
+          <p style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:1rem;font-weight:900;color:var(--uae-red-dark);">لا للحكم السريع</p>
+          <p style="font-family:'Fredoka One',cursive;font-size:0.85rem;color:var(--uae-black);">No Snap Judgements</p>
+          <p style="font-size:0.75rem;color:var(--uae-red-dark);margin-top:3px;font-family:'IBM Plex Sans Arabic',sans-serif;">اعرف قبل أن تحكم</p>
+          <p style="font-size:0.7rem;color:#777;font-style:italic;">Know before you judge</p>
+        </div>
+        <div style="background:var(--uae-green-light);border:2px solid var(--uae-green);border-radius:14px;padding:15px;text-align:center;">
+          <div style="font-size:1.9rem;margin-bottom:5px;">🌍</div>
+          <p style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:1rem;font-weight:900;color:var(--uae-green-dark);">التنوع قوة</p>
+          <p style="font-family:'Fredoka One',cursive;font-size:0.85rem;color:var(--uae-black);">Diversity is Strength</p>
+          <p style="font-size:0.75rem;color:var(--uae-green-dark);margin-top:3px;font-family:'IBM Plex Sans Arabic',sans-serif;">الاختلاف يُثرينا</p>
+          <p style="font-size:0.7rem;color:#777;font-style:italic;">Difference enriches us</p>
+        </div>
+        <div style="background:var(--uae-black);border:2px solid var(--uae-black);border-radius:14px;padding:15px;text-align:center;">
+          <div style="font-size:1.9rem;margin-bottom:5px;">🕊</div>
+          <p style="font-family:'IBM Plex Sans Arabic',sans-serif;font-size:1rem;font-weight:900;color:var(--uae-red);">روح الإمارات</p>
+          <p style="font-family:'Fredoka One',cursive;font-size:0.85rem;color:var(--uae-white);">Spirit of UAE</p>
+          <p style="font-size:0.75rem;color:rgba(255,255,255,0.85);margin-top:3px;font-family:'IBM Plex Sans Arabic',sans-serif;">التسامح قيمة وطنية</p>
+          <p style="font-size:0.7rem;color:rgba(255,255,255,0.7);font-style:italic;">Tolerance is a national value</p>
+        </div>
+      </div>
+      <p style="margin-top:18px;font-size:0.78rem;color:#777;font-family:'IBM Plex Sans Arabic',sans-serif;direction:rtl;">إعداد المعلمة: غادة مرتضى</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     S13 — TIME PLAN
+══════════════════════════════════ -->
+<div class="section-card" id="sec-13">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--uae-black);color:var(--uae-white);">⏱️</div>
+    <div class="card-title-wrap">
+      <div class="card-title">خطة توزيع الوقت — 45 دقيقة</div>
+      <div class="card-title-en">45-Minute Time Plan</div>
+    </div>
+    <span class="section-number">13 / 13</span>
+  </div>
+  <div class="card-body">
+    <table class="culture-table" style="font-size:0.88rem;">
+      <thead>
+        <tr>
+          <th class="col-cat">القسم<div style="font-size:0.78rem;font-weight:600;opacity:0.85;">Section</div></th>
+          <th>النشاط<div style="font-size:0.78rem;font-weight:600;opacity:0.85;">Activity</div></th>
+          <th class="col-other">الوقت<div style="font-size:0.78rem;font-weight:600;opacity:0.85;">Time</div></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="cat">1</td><td>عنوان وأهداف · Title & Objectives</td><td><strong>2 min</strong></td></tr>
+        <tr><td class="cat">2</td><td>المفردات · Vocabulary</td><td><strong>5 min</strong></td></tr>
+        <tr><td class="cat">3</td><td>الزائران · Two Visitors</td><td><strong>4 min</strong></td></tr>
+        <tr><td class="cat">4</td><td>قصة الحذاء · Boots Story</td><td><strong>6 min</strong></td></tr>
+        <tr><td class="cat">5</td><td>أسئلة أ، ب · Questions A, B</td><td><strong>5 min</strong></td></tr>
+        <tr><td class="cat">6</td><td>أسئلة ج، د، هـ · Questions C, D, E</td><td><strong>6 min</strong></td></tr>
+        <tr style="background:var(--uae-black);"><td class="cat" style="background:var(--uae-red);color:var(--uae-white);">⭐ 7</td><td style="background:var(--uae-black);color:var(--uae-white);"><strong>تقييم تعلّمي · Assessment for Learning</strong></td><td style="background:var(--uae-black);color:var(--uae-white);"><strong>5 min</strong></td></tr>
+        <tr><td class="cat">8</td><td>التنوع في الإمارات · UAE Diversity</td><td><strong>5 min</strong></td></tr>
+        <tr><td class="cat">9</td><td>نشاط البطاطا · Potato Activity</td><td><strong>6 min</strong></td></tr>
+        <tr><td class="cat">10</td><td>الاختبار النهائي · Quiz</td><td><strong>4 min</strong></td></tr>
+        <tr><td class="cat">11</td><td>بطاقة الخروج · Exit Ticket</td><td><strong>1 min</strong></td></tr>
+        <tr><td class="cat">12</td><td>أحسنتم · Well Done</td><td><strong>1 min</strong></td></tr>
+        <tr style="background:var(--uae-red-light);font-weight:900;"><td class="cat" style="background:var(--uae-red);color:var(--uae-white);">📊</td><td><strong>المجموع · Total</strong></td><td><strong style="color:var(--uae-red-dark);">50 min</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.82rem;color:#777;font-style:italic;margin-top:10px;text-align:center;">💡 الوقت مرن — يمكن تقصير قصة الحذاء أو الأسئلة حسب وقت الصف.<br>Time is flexible — Boots Story or Questions can be shortened to fit class time.</p>
+  </div>
+</div>
+
+</main>
+
+<footer>✦ Social Studies · Year 7 · Unit 4 · Lesson 2 — How Tolerance Appears in Society ✦ &nbsp;|&nbsp; Smart Board Ready &nbsp;|&nbsp; إعداد المعلمة: غادة مرتضى ✦</footer>
+
+<script>
+/* ── NAVIGATION SETUP ── */
+const navData = [
+  {label:'Title',ar:'العنوان',n:1},
+  {label:'Vocab',ar:'المفردات',n:2},
+  {label:'Visitors',ar:'الزائران',n:3},
+  {label:'Story',ar:'القصة',n:4},
+  {label:'Q A-B',ar:'أسئلة أ-ب',n:5},
+  {label:'Q C-E',ar:'أسئلة ج-هـ',n:6},
+  {label:'⭐ AfL',ar:'تقييم',n:7},
+  {label:'UAE',ar:'الإمارات',n:8},
+  {label:'Potato',ar:'البطاطا',n:9},
+  {label:'Quiz',ar:'اختبار',n:10},
+  {label:'Exit',ar:'خروج',n:11},
+  {label:'Done',ar:'أحسنتم',n:12},
+  {label:'Plan',ar:'الوقت',n:13}
+];
+
+const navStrip = document.getElementById('navStrip');
+navData.forEach((item, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'nav-btn' + (i === 0 ? ' active' : '');
+  btn.innerHTML = `${item.ar}<br><span style="font-size:0.7rem;opacity:0.8;">${item.label}</span>`;
+  btn.onclick = () => showSection(i, btn);
+  navStrip.appendChild(btn);
+});
+
+const sections = document.querySelectorAll('.section-card');
+const N = sections.length;
+let cur = 0;
+
+function showSection(idx, btn) {
+  sections.forEach((s,i) => s.classList.toggle('visible', i === idx));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  cur = idx;
+  const pct = Math.round(((idx+1)/N)*100);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `Section ${idx+1} of ${N}`;
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+document.addEventListener('keydown', e => {
+  const btns = document.querySelectorAll('.nav-btn');
+  if(e.key === 'ArrowLeft' && cur < N-1) showSection(cur+1, btns[cur+1]);
+  if(e.key === 'ArrowRight' && cur > 0) showSection(cur-1, btns[cur-1]);
+});
+
+/* ── REVEAL ── */
+function toggleReveal(id, btn) {
+  const el = document.getElementById(id);
+  const shown = el.classList.toggle('shown');
+  if(btn){
+    btn.innerHTML = shown ? '✅ Hide Answer · إخفاء الإجابة' : '👁 Show Answer · أظهر الإجابة';
+  }
+}
+
+/* ── VOCAB FLIP ── */
+function flipCard(el){ el.classList.toggle('flipped'); }
+
+/* ── MC ── */
+function checkAnswer(opt, correct, gid){
+  const parent = document.getElementById(gid);
+  if(parent.querySelector('.mc-opt.correct, .mc-opt.wrong')) return;
+  parent.querySelectorAll('.mc-opt').forEach(o => o.classList.add('disabled'));
+  opt.classList.add(correct ? 'correct' : 'wrong');
+  if(!correct) {
+    parent.querySelectorAll('.mc-opt').forEach(o => {
+      if(o.getAttribute('onclick').includes('true')) o.classList.add('correct');
+    });
+  }
+  const fb = document.getElementById(gid + '-fb');
+  fb.className = 'mc-feedback show ' + (correct ? 'good' : 'bad');
+  fb.innerHTML = correct
+    ? '✅ إجابة صحيحة! أحسنت <span style="font-style:italic;font-size:0.85rem;">— Correct! Well done.</span>'
+    : '❌ ليست صحيحة — انظر الإجابة المظللة <span style="font-style:italic;font-size:0.85rem;">— Not quite, see the highlighted correct answer.</span>';
+  const rst = document.getElementById(gid + '-rst');
+  if(rst) rst.classList.add('show');
+}
+
+function resetMC(gid){
+  document.getElementById(gid).querySelectorAll('.mc-opt').forEach(o => {
+    o.classList.remove('correct','wrong','disabled');
+  });
+  document.getElementById(gid + '-fb').className = 'mc-feedback';
+  const rst = document.getElementById(gid + '-rst');
+  if(rst) rst.classList.remove('show');
+}
+
+/* ── EXIT ── */
+function selectExit(card, type){
+  document.querySelectorAll('.exit-card').forEach(c => c.classList.remove('selected'));
+  card.classList.add('selected');
+  const c = document.getElementById('exitConfirm');
+  c.className = 'exit-confirm show';
+  const msgs = {
+    'got-it': {
+      ar: '🌟 ممتاز! أنت جاهز للدرس القادم. أحسنت العمل اليوم!',
+      en: 'Excellent! You are ready for the next lesson. Great work today!'
+    },
+    'almost': {
+      ar: '🤔 جهد رائع! اكتب سؤالك واسأل في بداية الدرس القادم.',
+      en: 'Great effort! Write your question and ask at the start of next lesson.'
+    },
+    'lost': {
+      ar: '🙋 لا مشكلة — سنراجع الدرس معاً. أنت لست وحدك!',
+      en: 'No problem — we will review the lesson together. You are not alone!'
+    }
+  };
+  c.innerHTML = `<p class="conf-msg">${msgs[type].ar}</p><p class="conf-msg-en">${msgs[type].en}</p>`;
+}
+
+/* ── 45-MIN CLOCK ── */
+let clockSeconds = 45 * 60;
+let clockInterval = null;
+const clockBar = document.getElementById('clockBar');
+const clockDisplay = document.getElementById('clockDisplay');
+
+function updateClockDisplay(){
+  const m = Math.floor(clockSeconds / 60);
+  const s = clockSeconds % 60;
+  clockDisplay.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+  clockBar.classList.remove('warning','danger');
+  if(clockSeconds <= 60) clockBar.classList.add('danger');
+  else if(clockSeconds <= 5 * 60) clockBar.classList.add('warning');
+}
+
+function startClock(){
+  if(clockInterval) return;
+  clockInterval = setInterval(() => {
+    if(clockSeconds <= 0) { pauseClock(); return; }
+    clockSeconds--;
+    updateClockDisplay();
+  }, 1000);
+}
+
+function pauseClock(){
+  clearInterval(clockInterval);
+  clockInterval = null;
+}
+
+function resetClock(){
+  pauseClock();
+  clockSeconds = 45 * 60;
+  updateClockDisplay();
+}
+
+updateClockDisplay();
+</script>
+</body>
+</html>

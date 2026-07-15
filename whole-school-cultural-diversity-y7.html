@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moral Studies Y7 – Unit 4 Lesson 5: Whole School Approach to Cultural Diversity</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Nunito:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap');
+
+  :root {
+    /* THE LOOM — five natural textile dyes on an indigo frame */
+    --warp:        #405673;   /* indigo-slate — the loom frame */
+    --warp-deep:   #2F4160;
+    --warp-soft:   #E6EAF1;
+    --saffron:     #DDA02E;
+    --saffron-lt:  #FAEED6;
+    --madder:      #BE4F3C;
+    --madder-lt:   #F7E3DF;
+    --indigo:      #3A6EA5;
+    --indigo-lt:   #DEE8F3;
+    --viridian:    #2C7F6C;
+    --viridian-lt: #DCEDE8;
+    --aubergine:   #7A4374;
+    --aubergine-lt:#EDE0EC;
+    --thread-glow: #E7C87E;
+
+    /* legacy names remapped onto the dye palette */
+    --red: var(--madder);          --red-light: var(--madder-lt);     --red-dark: #8E3527;
+    --orange: #B87A1E;             --orange-light: var(--saffron-lt);
+    --gold: var(--saffron);        --gold-light: var(--saffron-lt);   --gold-dark: #9C6D18;
+    --green: var(--viridian);      --green-light: var(--viridian-lt);
+    --teal: var(--indigo);         --teal-light: var(--indigo-lt);
+    --blue: var(--indigo);         --blue-light: var(--indigo-lt);
+    --purple: var(--aubergine);    --purple-light: var(--aubergine-lt);
+    --slate: var(--warp);
+    --cream: #EDEFF2;              /* cool linen, not warm cream */
+    --white: #ffffff;
+    --shadow: 0 6px 28px rgba(35,50,77,0.10);
+    --radius: 16px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--slate);
+    min-height: 100vh;
+  }
+
+  /* CLOCK */
+  .clock-bar {
+    display:flex; align-items:center; justify-content:center; gap:14px;
+    background:var(--warp-deep); padding:5px 20px;
+    border-bottom:1px solid rgba(231,200,126,0.18);
+  }
+  .clock-display {
+    font-family:'Fraunces',Georgia,serif; font-weight:900; font-size:1.2rem;
+    color:var(--thread-glow); letter-spacing:.5px; min-width:88px; text-align:center;
+    font-variant-numeric:tabular-nums;
+  }
+  .clock-btn {
+    background:rgba(231,200,126,0.10); border:1px solid rgba(231,200,126,0.32);
+    color:var(--thread-glow); width:28px; height:28px; border-radius:8px;
+    font-size:0.78rem; cursor:pointer; transition:.18s;
+  }
+  .clock-btn:hover { background:rgba(231,200,126,0.26); }
+  .clock-btn:focus-visible { outline:2px solid var(--thread-glow); outline-offset:2px; }
+  .clock-hint { font-size:0.72rem; font-weight:800; color:rgba(255,255,255,0.42); letter-spacing:.4px; }
+  .clock-bar.warning { background:#6B4A12; }
+  .clock-bar.warning .clock-display { color:#FFD98A; }
+  .clock-bar.danger  { background:var(--madder); animation:pulseBar 1.1s ease-in-out infinite; }
+  .clock-bar.danger .clock-display, .clock-bar.danger .clock-hint { color:#fff; }
+  @keyframes pulseBar { 0%,100%{opacity:1} 50%{opacity:.72} }
+
+  /* HEADER */
+  header {
+    background: var(--warp);
+    padding: 11px 26px; position:relative; overflow:hidden;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:20px; flex-wrap:wrap;
+  }
+  .hbrand { position:relative; z-index:1; text-align:left; min-width:0; }
+  header::before {
+    content:''; position:absolute; inset:0; opacity:.5;
+    background:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.045) 0 1px, transparent 1px 9px),
+      repeating-linear-gradient(0deg,  rgba(255,255,255,.03)  0 1px, transparent 1px 9px);
+  }
+  header h1 {
+    font-family:'Fraunces',Georgia,serif; font-weight:700;
+    font-size:clamp(1rem,1.7vw,1.3rem); color:#fff;
+    position:relative; line-height:1.25; letter-spacing:0;
+  }
+  header .h1-ar {
+    font-family:'Tajawal',sans-serif; font-weight:700; direction:rtl; text-align:right;
+    font-size:clamp(0.9rem,1.35vw,1.05rem); color:var(--thread-glow);
+    position:relative; margin-bottom:1px; line-height:1.6;
+  }
+  header .subtitle {
+    font-size:0.7rem; color:rgba(255,255,255,0.58); margin-top:2px;
+    font-weight:700; position:relative; letter-spacing:.3px;
+  }
+  .badge-row { display:flex; gap:6px; justify-content:flex-end; margin-top:0; flex-wrap:wrap;
+    position:relative; z-index:1; flex:0 1 auto; }
+  @media(max-width:900px){
+    header{justify-content:center;}
+    .hbrand{text-align:center;width:100%}
+    header .h1-ar{text-align:center}
+    .badge-row{justify-content:center;width:100%}
+  }
+  .badge {
+    background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.18);
+    color:rgba(255,255,255,0.80); padding:3px 10px; border-radius:30px;
+    font-size:0.68rem; font-weight:800;
+  }
+
+  /* NAV */
+  .nav-strip {
+    background:var(--warp-deep); display:flex; overflow-x:auto; white-space:nowrap;
+    scrollbar-width:none;
+  }
+  .nav-strip::-webkit-scrollbar { display:none; }
+  .nav-btn {
+    flex:1; min-width:100px; padding:9px 7px;
+    border:none; background:transparent; color:rgba(255,255,255,0.42);
+    font-family:'Nunito',sans-serif; font-size:0.76rem; font-weight:800;
+    cursor:pointer; transition:.2s; border-bottom:3px solid transparent; text-align:center;
+  }
+  .nav-btn:hover { color:#fff; background:rgba(255,255,255,0.05); }
+  .nav-btn.active { color:#fff; background:rgba(255,255,255,0.08); }
+  .nav-btn:focus-visible { outline:2px solid var(--thread-glow); outline-offset:-3px; }
+
+  /* THE WARP — progress, woven */
+  .warp-section { background:#fff; padding:8px 22px 7px; border-bottom:1px solid #DDE1E8; }
+  .warp-inner { max-width:1000px; margin:0 auto; }
+  .warp { display:flex; gap:3px; align-items:flex-end; height:15px; }
+  .thread {
+    flex:1; border-radius:3px; background:var(--warp-soft);
+    height:5px; transition:height .45s cubic-bezier(.4,0,.2,1), background .45s, opacity .45s;
+    opacity:.55;
+  }
+  .thread.woven  { height:8px;  opacity:1; }
+  .thread.active { height:15px; opacity:1; box-shadow:0 0 0 2px rgba(35,50,77,.10); }
+  .warp-label {
+    display:flex; justify-content:space-between; align-items:baseline;
+    margin-top:5px; font-size:0.74rem; font-weight:800; color:var(--warp);
+  }
+  .warp-label .weave-note { color:#8A93A3; font-weight:700; letter-spacing:.3px; }
+
+  main { max-width: 1000px; margin: 0 auto; padding: 30px 22px 60px; }
+
+  /* SECTION CARD */
+  .section-card {
+    background: var(--white); border-radius: var(--radius);
+    box-shadow: var(--shadow); margin-bottom: 28px;
+    overflow: hidden; display: none;
+  }
+  .section-card.visible { display: block; animation: fadeUp 0.45s ease both; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .section-card { border-top:4px solid var(--thread, var(--warp)); }
+  .card-header {
+    display:flex; align-items:center; gap:13px;
+    padding:15px 22px; border-bottom:1px solid #E7EAEF;
+  }
+  .card-title-wrap { display:flex; flex-direction:column; gap:1px; min-width:0; }
+  .card-title-ar {
+    font-family:'Tajawal',sans-serif; font-weight:800; direction:rtl; text-align:right;
+    font-size:1.02rem; color:var(--thread, var(--warp)); line-height:1.5;
+  }
+  .time-chip {
+    margin-left:auto; background:var(--warp-soft); color:var(--warp);
+    font-weight:900; font-size:0.72rem; padding:4px 11px; border-radius:20px;
+    white-space:nowrap; flex-shrink:0;
+  }
+  .card-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+  .card-title { font-family:'Fraunces',Georgia,serif; font-weight:900; font-size:1.3rem; color:var(--warp); letter-spacing:-0.2px; line-height:1.25; }
+  .section-number { background:var(--thread, var(--warp)); color:#fff; font-family:'Fraunces',Georgia,serif; font-weight:900; font-size:0.78rem; padding:3px 11px; border-radius:20px; white-space:nowrap; flex-shrink:0; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation:none !important; transition:none !important; } }
+  .card-body { padding: 24px; }
+
+  /* TEACHER BOX */
+  .teacher-box {
+    background: linear-gradient(135deg, var(--green-light), #bbf7d0);
+    border-left: 5px solid var(--green); border-radius: 10px;
+    padding: 13px 17px; margin-bottom: 18px; display: flex; gap: 11px; align-items: flex-start;
+  }
+  .teacher-box .icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 1px; }
+  .teacher-box .label { font-size: 0.67rem; font-weight: 900; color: var(--warp); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+  .teacher-box p { font-size: 0.9rem; color: var(--warp); font-weight: 600; font-style: italic; }
+
+  /* BIG QUESTION */
+  .big-question {
+    background: linear-gradient(135deg, var(--warp-deep), var(--warp), #23695A);
+    border-radius: 16px; padding: 28px; text-align: center; margin-bottom: 18px;
+  }
+  .big-question .q-text { font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.2rem, 3vw, 1.85rem); color: #fff; line-height: 1.4; }
+
+  /* REVEAL BTN */
+  .reveal-btn {
+    background: var(--warp); color: #fff; border: none; border-radius: 30px;
+    padding: 12px 26px; font-family: 'Nunito', sans-serif; font-size: 0.97rem; font-weight: 800;
+    cursor: pointer; margin-top: 14px;
+    box-shadow: 0 4px 14px rgba(20,83,45,0.35);
+    transition: transform 0.15s, box-shadow 0.15s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .reveal-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 20px rgba(20,83,45,0.4); }
+  .reveal-btn:active { transform: scale(0.97); }
+  .reveal-btn.blue { background: var(--blue); box-shadow: 0 4px 14px rgba(37,99,235,0.3); }
+  .reveal-btn.full { width: 100%; justify-content: center; }
+
+  .reveal-content { display: none; margin-top: 14px; animation: fadeUp 0.35s ease; }
+  .reveal-content.shown { display: block; }
+
+  /* OBJECTIVES */
+  .obj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap: 13px; }
+  .obj-item {
+    background: var(--green-light); border-radius: 14px; padding: 17px 14px;
+    display: flex; flex-direction: column; align-items: center; text-align: center; gap: 9px;
+    border: 2px solid rgba(22,163,74,0.3); transition: transform 0.2s;
+  }
+  .obj-item:hover { transform: translateY(-3px); }
+  .obj-item .obj-icon { font-size: 1.8rem; }
+  .obj-item p { font-size: 0.86rem; font-weight: 700; color: var(--warp); line-height: 1.4; }
+
+  /* VOCAB CARDS */
+  .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px,1fr)); gap: 12px; }
+  .vcard {
+    background: var(--green-light); border: 2px solid rgba(22,163,74,0.3);
+    border-radius: 16px; padding: 17px 13px; text-align: center; cursor: pointer; transition: all 0.22s;
+  }
+  .vcard:hover { transform: translateY(-3px); border-color: var(--green); }
+  .vcard.flipped { border-color: var(--green); background: #bbf7d0; }
+  .vcard-icon { font-size: 1.7rem; display: block; margin-bottom: 7px; }
+  .vcard-word { font-family: 'Fraunces', Georgia, serif; font-size: 1.05rem; color: var(--warp); display: block; margin-bottom: 5px; }
+  .vcard-def { font-size: 0.8rem; color: var(--warp); font-weight: 600; line-height: 1.5; display: none; }
+  .vcard.flipped .vcard-def { display: block; }
+  .vcard-hint { font-size: 0.68rem; color: rgba(20,83,45,0.5); font-weight: 700; margin-top: 5px; }
+  .vcard.flipped .vcard-hint { display: none; }
+
+  /* STORY BOX */
+  .story-box {
+    background: linear-gradient(135deg, var(--warp-deep), #0f3d20);
+    border-radius: 16px; padding: 22px 24px; margin-bottom: 14px;
+    border: 2px solid rgba(231,200,126,0.2);
+  }
+  .story-text { font-size: clamp(14px,1.8vw,18px); color: rgba(255,255,255,0.9); line-height: 1.95; }
+  .story-text .hlg { background: rgba(231,200,126,0.22); border-radius: 4px; padding: 1px 5px; color: #E7C87E; }
+  .story-text .hly { background: rgba(253,224,71,0.2); border-radius: 4px; padding: 1px 5px; color: #fde047; }
+  .story-text .hlb { background: rgba(147,197,253,0.2); border-radius: 4px; padding: 1px 5px; color: #93c5fd; }
+
+  /* THINK BOX */
+  .think-box {
+    background: rgba(253,224,71,0.1); border: 2px solid rgba(253,224,71,0.4);
+    border-radius: 14px; padding: 16px 20px; margin-bottom: 14px;
+  }
+  .think-box .th-icon { font-size: 1.8rem; margin-bottom: 5px; display: block; }
+  .think-box p { font-size: 0.93rem; font-weight: 700; color: var(--slate); line-height: 1.65; }
+
+  /* KEY FACT */
+  .key-fact {
+    background: var(--blue-light); border: 2px solid rgba(37,99,235,0.3);
+    border-radius: 12px; padding: 13px 18px; margin-bottom: 14px;
+    display: flex; gap: 11px; align-items: flex-start;
+  }
+  .key-fact .kf-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .key-fact p { font-size: 0.9rem; font-weight: 700; color: var(--blue); line-height: 1.6; }
+
+  /* QUOTE BOX */
+  .quote-box {
+    background: linear-gradient(135deg, var(--warp-deep), var(--warp));
+    border-radius: 16px; padding: 26px 28px; text-align: center; margin-bottom: 16px;
+    border: 2px solid rgba(231,200,126,0.25);
+  }
+  .quote-box .q-marks { font-family: 'Fraunces', Georgia, serif; font-size: 4rem; color: rgba(231,200,126,0.3); line-height: 0.5; display: block; }
+  .quote-box .q-text { font-size: clamp(1rem,2.5vw,1.35rem); color: #fff; font-style: italic; font-weight: 700; line-height: 1.65; margin: 10px 0; }
+  .quote-box .q-attr { font-size: 0.82rem; color: #E7C87E; font-weight: 800; }
+
+  /* RULE / TIP / WARN */
+  .rule-box { background: rgba(22,163,74,0.07); border: 2px solid rgba(22,163,74,0.25); border-radius: 14px; padding: 16px 20px; margin-bottom: 14px; }
+  .tip { background: rgba(22,163,74,0.07); border: 1.5px solid rgba(22,163,74,0.3); border-radius: 12px; padding: 12px 16px; margin-bottom: 12px; }
+  .warn { background: rgba(253,224,71,0.1); border: 1.5px solid rgba(253,224,71,0.4); border-radius: 12px; padding: 12px 16px; margin-bottom: 12px; }
+
+  /* TEACHER NOTE */
+  .tnote { background: rgba(15,23,42,0.05); border: 1.5px dashed #cbd5e1; border-radius: 10px; padding: 10px 16px; font-size: 0.8rem; color: #64748b; margin-top: 14px; line-height: 1.6; }
+  .tnote-lbl { font-size: 0.66rem; font-weight: 900; letter-spacing:.12em; text-transform:uppercase; color:#94a3b8; display:block; margin-bottom:3px; }
+
+  /* KCHIP */
+  .kchip { display: inline-block; background: rgba(22,163,74,0.1); border: 1.5px solid rgba(22,163,74,0.35); color: var(--warp); padding: 5px 13px; border-radius: 20px; font-size: 0.82rem; font-weight: 800; margin: 3px; }
+
+  /* Q CARDS */
+  .q-card { background: #f8fafc; border: 2px solid #DDE1E8; border-radius: 14px; padding: 15px 17px; margin-bottom: 11px; }
+  .q-num { background: var(--warp); color: #fff; width: 27px; height: 27px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 800; flex-shrink: 0; }
+  .q-text-sm { font-size: clamp(14px,1.8vw,19px); font-weight: 700; color: var(--slate); margin-bottom: 9px; margin-top: 7px; }
+  .q-answer { background: rgba(22,163,74,0.07); border: 1.5px solid var(--green); border-radius: 10px; padding: 11px 14px; display: none; }
+  .q-answer-text { font-size: clamp(13px,1.5vw,16px); color: var(--warp); font-weight: 700; }
+
+  /* MC */
+  .mc-question { font-size: 0.98rem; font-weight: 700; color: var(--slate); margin-bottom: 11px; line-height: 1.5; }
+  .mc-options { display: flex; flex-direction: column; gap: 8px; }
+  .mc-opt {
+    background: var(--green-light); border: 2px solid rgba(22,163,74,0.35);
+    border-radius: 12px; padding: 11px 15px;
+    font-size: 0.9rem; font-weight: 700; color: var(--warp);
+    cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.18s;
+  }
+  .mc-opt:hover { background: #bbf7d0; }
+  .mc-opt.correct { background: var(--viridian-lt); border-color: var(--green); color: var(--warp); }
+  .mc-opt.wrong   { background: #fee2e2; border-color: #ef4444; color: #7f1d1d; }
+  .mc-opt.disabled { pointer-events: none; opacity: 0.65; }
+  .mc-feedback { margin-top: 10px; padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 0.88rem; display: none; }
+  .mc-feedback.show { display: block; }
+  .mc-feedback.good { background: var(--viridian-lt); color: var(--warp); border: 1.5px solid var(--green); }
+  .mc-feedback.bad  { background: #fee2e2; color: #7f1d1d; border: 1.5px solid #ef4444; }
+  .mc-reset-btn { margin-top: 9px; background: #64748b; color: #fff; border: none; border-radius: 20px; padding: 7px 17px; font-family:'Nunito',sans-serif; font-size:0.8rem; font-weight:700; cursor:pointer; display:none; }
+  .mc-reset-btn.show { display: inline-block; }
+
+  /* SCENARIO */
+  .scenario-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 13px; }
+  .scenario-card { border-radius: 14px; overflow: hidden; border: 2px solid transparent; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+  .scenario-card:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(0,0,0,0.12); }
+  .sc-top { padding: 17px 15px 12px; font-weight: 800; font-size: 0.93rem; line-height: 1.5; }
+  .sc-bottom { padding: 12px 15px; font-size: 0.84rem; font-weight: 700; display: none; animation: fadeUp 0.3s ease; }
+  .sc-bottom.shown { display: block; }
+  .sc-hint { font-size: 0.7rem; font-weight: 700; opacity: 0.65; margin-top: 5px; }
+
+  /* TPS */
+  .tps-steps { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+  .tps-step { flex: 1; min-width: 150px; border-radius: 14px; padding: 16px 13px; text-align: center; font-weight: 800; font-size: 0.87rem; }
+  .tps-step .step-num { font-family: 'Fraunces', Georgia, serif; font-size: 1.85rem; display: block; margin-bottom: 5px; }
+  .tps-think { background: var(--teal-light); border: 2px solid var(--teal); color: var(--teal); }
+  .tps-pair  { background: var(--purple-light); border: 2px solid var(--purple); color: var(--purple); }
+  .tps-share { background: var(--gold-light); border: 2px solid var(--gold-dark); color: var(--gold-dark); }
+
+  /* WALKING DEBATE */
+  .debate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 12px; margin-top: 14px; }
+  .debate-option {
+    border-radius: 14px; padding: 18px 14px; text-align: center; font-weight: 800;
+    font-size: 0.93rem; cursor: pointer; transition: all 0.22s;
+    border: 3px solid transparent;
+  }
+  .debate-option:hover { transform: translateY(-3px); }
+  .debate-option.selected { transform: scale(1.04); }
+  .debate-yes { background: var(--viridian-lt); border-color: var(--green); color: var(--warp); }
+  .debate-yes.selected { background: var(--green); color: #fff; }
+  .debate-no { background: var(--red-light); border-color: var(--red); color: var(--red-dark); }
+  .debate-no.selected { background: var(--red); color: #fff; }
+  .debate-maybe { background: var(--gold-light); border-color: var(--gold-dark); color: var(--gold-dark); }
+  .debate-maybe.selected { background: var(--gold); color: #fff; }
+
+  /* REFLECTION */
+  .reflection-box { background: linear-gradient(135deg, var(--green-light), #bbf7d0); border: 2px dashed var(--green); border-radius: 16px; padding: 24px; text-align: center; margin-top: 14px; }
+  .reflection-box .r-icon { font-size: 2.2rem; margin-bottom: 7px; }
+  .reflection-box .r-q { font-family: 'Fraunces', Georgia, serif; font-size: 1.22rem; color: var(--warp); margin-bottom: 12px; line-height: 1.4; }
+  .refl-area { width: 100%; min-height: 72px; border: 2px solid var(--green); border-radius: 10px; padding: 10px 12px; font-family:'Nunito',sans-serif; font-size:0.9rem; color:var(--slate); resize: vertical; outline: none; background: #fff; }
+  .refl-area:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(13,148,136,0.15); }
+
+  /* ALINE */
+  .aline { border-bottom: 2px dashed #DDE1E8; height: 32px; margin-bottom: 10px; }
+
+  /* DISC */
+  .disc-list { display: flex; flex-direction: column; gap: 10px; }
+  .disc-item { background: var(--teal-light); border-left: 5px solid var(--teal); border-radius: 10px; padding: 13px 15px; font-size: 0.92rem; font-weight: 700; color: var(--teal); cursor: pointer; transition: background 0.2s; display: flex; gap: 10px; }
+  .disc-item:hover { background: #99f6e4; }
+  .disc-item .di-icon { font-size: 1.25rem; flex-shrink: 0; }
+  .disc-answer { font-size: 0.85rem; color: var(--slate); margin-top: 7px; font-weight: 600; font-style: italic; display: none; animation: fadeUp 0.3s ease; }
+  .disc-answer.shown { display: block; }
+
+  /* DIVIDER */
+  hr.divider { border: none; border-top: 2px dashed #DDE1E8; margin: 20px 0; }
+
+  /* CELEBRATE */
+  .celebrate {
+    background: linear-gradient(135deg, var(--warp-deep), var(--warp), #23695A, #2C7F6C);
+    border-radius: 20px; padding: 36px 24px; text-align: center;
+  }
+
+  /* EXIT */
+  .exit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 14px; margin-top: 14px; }
+  .exit-card {
+    border-radius: 16px; padding: 22px 16px; text-align: center;
+    border: 3px solid transparent; cursor: pointer; transition: all 0.22s;
+  }
+  .exit-card:hover { transform: translateY(-3px); }
+  .exit-card.selected { transform: scale(1.04); }
+  .exit-icon { font-size: 2.2rem; margin-bottom: 8px; display: block; }
+  .exit-label { font-family: 'Fraunces', Georgia, serif; font-size: 1.08rem; }
+  .exit-sub { font-size: 0.78rem; font-weight: 700; margin-top: 4px; opacity: 0.7; }
+  .exit-confirm { background: var(--warp); color: #fff; border-radius: 14px; padding: 16px 20px; margin-top: 14px; display: none; }
+  .exit-confirm.show { display: block; }
+  .conf-msg { font-size: 1rem; font-weight: 700; line-height: 1.5; }
+
+  /* G grids */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .g3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+  @media(max-width:600px){ .g2,.g3 { grid-template-columns: 1fr; } }
+
+  /* FOOTER */
+  footer {
+    background: var(--warp-deep); color: rgba(231,200,126,0.6);
+    text-align: center; padding: 18px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em;
+  }
+
+  /* PROGRESS WRAPPER */
+  .progress-section { background: #fff; padding: 12px 22px; border-bottom: 2px solid #DDE1E8; max-width: 1000px; margin: 0 auto; }
+
+  /* NAV ARROWS */
+  .nav-arrows { display: flex; justify-content: space-between; margin-top: 24px; }
+  .nav-arrow-btn {
+    background: var(--warp); color: #fff; border: none; border-radius: 30px;
+    padding: 11px 24px; font-family: 'Nunito', sans-serif; font-size: 0.92rem; font-weight: 800;
+    cursor: pointer; transition: all 0.18s; display: flex; align-items: center; gap: 8px;
+  }
+  .nav-arrow-btn:hover { background: #23695A; transform: translateY(-2px); }
+  .nav-arrow-btn:disabled { background: #94a3b8; cursor: not-allowed; transform: none; }
+
+  /* TIMELINE */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .tl-item { display: flex; gap: 16px; padding-bottom: 22px; position: relative; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 44px; }
+  .tl-dot { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; border: 3px solid; }
+  .tl-line { flex: 1; width: 3px; background: #DDE1E8; margin-top: 4px; }
+  .tl-item:last-child .tl-line { display: none; }
+  .tl-content { padding-top: 6px; }
+  .tl-content h4 { font-family: 'Fraunces', Georgia, serif; font-size: 1.05rem; color: var(--warp); margin-bottom: 4px; }
+  .tl-content p { font-size: 0.87rem; font-weight: 700; color: var(--slate); line-height: 1.6; }
+
+  /* ACTION CARDS */
+  .action-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 14px; }
+  .action-card { border-radius: 16px; padding: 20px 15px; text-align: center; border: 2px solid; transition: transform 0.2s; cursor: default; }
+  .action-card:hover { transform: translateY(-3px); }
+  .action-icon { font-size: 2rem; display: block; margin-bottom: 9px; }
+  .action-title { font-family: 'Fraunces', Georgia, serif; font-size: 1rem; margin-bottom: 5px; }
+  .action-desc { font-size: 0.78rem; font-weight: 700; line-height: 1.5; opacity: 0.8; }
+
+</style>
+</head>
+<body>
+
+<!-- ── 50-MIN LESSON CLOCK ── -->
+<div class="clock-bar" id="clockBar">
+  <span class="clock-hint">LESSON CLOCK</span>
+  <div class="clock-display" id="clockDisplay">50:00</div>
+  <button class="clock-btn" onclick="startClock()" title="Start" aria-label="Start clock">▶</button>
+  <button class="clock-btn" onclick="pauseClock()" title="Pause" aria-label="Pause clock">⏸</button>
+  <button class="clock-btn" onclick="resetClock()" title="Reset" aria-label="Reset clock">↻</button>
+</div>
+
+<header>
+  <div class="hbrand">
+    <div class="h1-ar">النهج المدرسي الشامل تجاه التنوّع الثقافي</div>
+    <h1>A Whole School Approach to Cultural Diversity</h1>
+    <div class="subtitle">Moral, Social &amp; Cultural Studies · Year 7 · Unit 4 · Lesson 5</div>
+  </div>
+  <div class="badge-row">
+    <span class="badge">🧵 One school, many threads</span>
+    <span class="badge">🎤 Project day</span>
+    <span class="badge">⏱ 50 min</span>
+  </div>
+</header>
+
+<!-- NAV -->
+<div class="nav-strip" id="navStrip">
+  <button class="nav-btn active" onclick="goTo(0)">🎯 Intro</button>
+  <button class="nav-btn" onclick="goTo(1)">📖 Vocab</button>
+  <button class="nav-btn" onclick="goTo(2)">🌍 Activity 1</button>
+  <button class="nav-btn" onclick="goTo(3)">📰 Activity 2</button>
+  <button class="nav-btn" onclick="goTo(4)">💬 Activity 3</button>
+  <button class="nav-btn" onclick="goTo(5)">🗳️ Debate</button>
+  <button class="nav-btn" onclick="goTo(6)">🎤 Project</button>
+  <button class="nav-btn" onclick="goTo(7)">❓ Quiz</button>
+  <button class="nav-btn" onclick="goTo(8)">🪞 Reflect</button>
+  <button class="nav-btn" onclick="goTo(9)">🌟 Done!</button>
+</div>
+
+<!-- THE WARP — one thread per section; the cloth is woven as the lesson runs -->
+<div class="warp-section">
+  <div class="warp-inner">
+    <div class="warp" id="warp" role="progressbar" aria-label="Lesson progress"></div>
+    <div class="warp-label">
+      <span id="progressLabel">Section 1 of 10</span>
+      <span class="weave-note" id="weaveNote">1 thread woven · 3 min</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ===================== S0: INTRO ===================== -->
+<div class="section-card visible" id="sec-0" style="--thread:var(--indigo)">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--indigo-lt);color:var(--indigo)">🎯</div>
+    <div class="card-title-wrap">
+      <div class="card-title-ar">مرحبًا بكم في الدرس الخامس</div>
+      <div class="card-title">Welcome to Lesson 5!</div>
+    </div>
+    <span class="time-chip">⏱ 3 min</span>
+    <span class="section-number">1 / 10</span>
+  </div>
+  <div class="card-body">
+    <div class="big-question">
+      <p class="q-text">🏫 How can our whole school celebrate and embrace cultural diversity?</p>
+    </div>
+
+    <div class="obj-grid">
+      <div class="obj-item">
+        <span class="obj-icon">🌍</span>
+        <p>Understand what a whole school approach to diversity looks like</p>
+      </div>
+      <div class="obj-item">
+        <span class="obj-icon">🤝</span>
+        <p>Explore how tolerance is shown in society and school</p>
+      </div>
+      <div class="obj-item">
+        <span class="obj-icon">🎤</span>
+        <p>Present your culture project to the class</p>
+      </div>
+      <div class="obj-item">
+        <span class="obj-icon">💭</span>
+        <p>Reflect on what makes our school community special</p>
+      </div>
+    </div>
+
+    <div class="key-fact" style="margin-top:18px;">
+      <span class="kf-icon">🌉</span>
+      <p>The pedestrian bridge over the Dubai Water Canal has been named <strong>Tolerance Bridge</strong>. Sheikh Mohammed said bridges in the UAE connect humanity "literally and metaphorically."</p>
+    </div>
+
+    <div class="tnote"><span class="tnote-lbl">🎓 Teacher Note</span>This is the final lesson of Unit 4. Students will present their culture projects and reflect on the full unit. <strong>Time: 50 min</strong></div>
+
+    <div class="nav-arrows">
+      <button class="nav-arrow-btn" disabled>← Back</button>
+      <button class="nav-arrow-btn" onclick="goTo(1)">Next: Vocabulary →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== S1: VOCAB ===================== -->
+<div class="section-card" id="sec-1" style="--thread:var(--saffron)">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--saffron-lt);color:var(--saffron)">📖</div>
+    <div class="card-title-wrap">
+      <div class="card-title-ar">المفردات الأساسية — انقر للكشف</div>
+      <div class="card-title">Key Vocabulary — Tap to Reveal!</div>
+    </div>
+    <span class="time-chip">⏱ 5 min</span>
+    <span class="section-number">2 / 10</span>
+  </div>
+  <div class="card-body">
+    <div class="teacher-box">
+      <div class="icon">🎤</div>
+      <div>
+        <div class="label">Teacher says</div>
+        <p>"Read each word aloud before you flip it. These are our power words for today's lesson!"</p>
+      </div>
+    </div>
+    <div class="vocab-grid">
+      <div class="vcard" onclick="flipCard(this)">
+        <span class="vcard-icon">🌍</span>
+        <span class="vcard-word">Cultural Diversity</span>
+        <span class="vcard-def">The variety of different cultures, languages, religions and traditions existing together in a community.</span>
+        <span class="vcard-hint">👆 Tap to see definition</span>
+      </div>
+      <div class="vcard" onclick="flipCard(this)">
+        <span class="vcard-icon">🏫</span>
+        <span class="vcard-word">Whole School Approach</span>
+        <span class="vcard-def">When everyone in a school — students, teachers and staff — works together to create an inclusive and respectful environment.</span>
+        <span class="vcard-hint">👆 Tap to see definition</span>
+      </div>
+      <div class="vcard" onclick="flipCard(this)">
+        <span class="vcard-icon">🤝</span>
+        <span class="vcard-word">Solidarity</span>
+        <span class="vcard-def">Unity and support among a group of people, especially when facing challenges. Standing together as one.</span>
+        <span class="vcard-hint">👆 Tap to see definition</span>
+      </div>
+      <div class="vcard" onclick="flipCard(this)">
+        <span class="vcard-icon">🎉</span>
+        <span class="vcard-word">Multiculturalism</span>
+        <span class="vcard-def">A society where people of many different cultures live together and are valued equally.</span>
+        <span class="vcard-hint">👆 Tap to see definition</span>
+      </div>
+      <div class="vcard" onclick="flipCard(this)">
+        <span class="vcard-icon">⚡</span>
+        <span class="vcard-word">Tolerance</span>
+        <span class="vcard-def">Accepting and respecting people who are different from you, even if you don't always agree with them.</span>
+        <span class="vcard-hint">👆 Tap to see definition</span>
+      </div>
+      <div class="vcard" onclick="flipCard(this)">
+        <span class="vcard-icon">🌱</span>
+        <span class="vcard-word">Inclusivity</span>
+        <span class="vcard-def">Making sure everyone feels welcome, valued and part of the group — no one is left out.</span>
+        <span class="vcard-hint">👆 Tap to see definition</span>
+      </div>
+    </div>
+    <div class="tnote" style="margin-top:16px;"><span class="tnote-lbl">🎓 Teacher Note</span>All 6 words flipped? Great! Students can quiz each other in pairs. <strong>Time: 4 min</strong></div>
+    <div class="nav-arrows">
+      <button class="nav-arrow-btn" onclick="goTo(0)">← Back</button>
+      <button class="nav-arrow-btn" onclick="goTo(2)">Next: Activity 1 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== S2: ACTIVITY 1 — Cultural Comparison ===================== -->
+<div class="section-card" id="sec-2" style="--thread:var(--madder)">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--madder-lt);color:var(--madder)">🌍</div>
+    <div class="card-title-wrap">
+      <div class="card-title-ar">النشاط الأول — عناصر الثقافة</div>
+      <div class="card-title">Activity 1 — Elements of Culture</div>
+    </div>
+    <span class="time-chip">⏱ 6 min</span>
+    <span class="section-number">3 / 10</span>
+  </div>
+  <div class="card-body">
+    <div class="teacher-box">
+      <div class="icon">🎤</div>
+      <div>
+        <div class="label">Teacher says</div>
+        <p>"In your group, complete the table comparing Emirati culture with another culture you know. Click each element to see examples!"</p>
+      </div>
+    </div>
+
+    <p style="font-size:0.93rem;font-weight:800;color:var(--warp);margin-bottom:14px;">🌐 Click each cultural element below to explore it!</p>
+
+    <div class="scenario-grid">
+      <div class="scenario-card" style="border-color:var(--warp);" onclick="toggleScenario(this)">
+        <div class="sc-top" style="background:var(--green-light);color:var(--warp);">
+          <span style="font-size:1.5rem;">👗</span>
+          <p style="margin-top:7px;">Dress & Appearance</p>
+          <p class="sc-hint" style="color:var(--warp);">👆 Click to explore</p>
+        </div>
+        <div class="sc-bottom" style="background:#bbf7d0;color:var(--warp);">
+          <strong>Emirati Culture:</strong> Kandura (men), Abaya (women), Ghutra & Agal headwear — representing modesty, identity and heritage.<br><br>
+          <strong>Other Cultures:</strong> Traditional dress varies hugely — from Kilts in Scotland to Sarees in India to Hanbok in Korea. All carry deep cultural meaning!
+        </div>
+      </div>
+      <div class="scenario-card" style="border-color:var(--teal);" onclick="toggleScenario(this)">
+        <div class="sc-top" style="background:var(--teal-light);color:var(--teal);">
+          <span style="font-size:1.5rem;">🗣️</span>
+          <p style="margin-top:7px;">Communication & Language</p>
+          <p class="sc-hint" style="color:var(--teal);">👆 Click to explore</p>
+        </div>
+        <div class="sc-bottom" style="background:#99f6e4;color:#134e4a;">
+          <strong>Emirati Culture:</strong> Arabic is the official language. Greetings like "As-salamu alaykum" reflect Islamic values and respect.<br><br>
+          <strong>Key Fact:</strong> Africa alone has over 2,000 languages — about one-third of all languages in the world, making it the most linguistically diverse continent!
+        </div>
+      </div>
+      <div class="scenario-card" style="border-color:var(--orange);" onclick="toggleScenario(this)">
+        <div class="sc-top" style="background:var(--orange-light);color:var(--orange);">
+          <span style="font-size:1.5rem;">🍽️</span>
+          <p style="margin-top:7px;">Food & Eating Habits</p>
+          <p class="sc-hint" style="color:var(--orange);">👆 Click to explore</p>
+        </div>
+        <div class="sc-bottom" style="background:#fed7aa;color:#7c2d12;">
+          <strong>Emirati Culture:</strong> Machboos, harees, luqaimat, dates and camel milk — food is deeply connected to celebration, hospitality and family.<br><br>
+          <strong>Other Cultures:</strong> Japan has sushi & ramen, Mexico has tacos & mole, Ethiopia has injera — food tells the story of a people's history and land.
+        </div>
+      </div>
+      <div class="scenario-card" style="border-color:var(--purple);" onclick="toggleScenario(this)">
+        <div class="sc-top" style="background:var(--purple-light);color:var(--purple);">
+          <span style="font-size:1.5rem;">🕌</span>
+          <p style="margin-top:7px;">Beliefs & Values</p>
+          <p class="sc-hint" style="color:var(--purple);">👆 Click to explore</p>
+        </div>
+        <div class="sc-bottom" style="background:#ddd6fe;color:#4c1d95;">
+          <strong>Emirati Culture:</strong> Islam is central to Emirati values — hospitality (karam), respect for elders, community, and generosity are core values.<br><br>
+          <strong>Other Cultures:</strong> Hinduism, Buddhism, Christianity, Judaism and many other belief systems shape the values and daily practices of billions of people worldwide.
+        </div>
+      </div>
+      <div class="scenario-card" style="border-color:var(--blue);" onclick="toggleScenario(this)">
+        <div class="sc-top" style="background:var(--blue-light);color:var(--blue);">
+          <span style="font-size:1.5rem;">🎨</span>
+          <p style="margin-top:7px;">Arts & Literature</p>
+          <p class="sc-hint" style="color:var(--blue);">👆 Click to explore</p>
+        </div>
+        <div class="sc-bottom" style="background:#bfdbfe;color:#1e3a8a;">
+          <strong>Emirati Culture:</strong> Arabic calligraphy, Al-Ayyala dance, falconry, poetry and traditional music (Al Taghrooda) are UNESCO-recognised heritage arts.<br><br>
+          <strong>Other Cultures:</strong> From Flamenco in Spain to Kabuki in Japan, every culture expresses itself through unique art forms that carry centuries of history.
+        </div>
+      </div>
+    </div>
+
+    <button class="reveal-btn full" style="margin-top:16px;" onclick="toggleReveal('act1-key',this)">
+      💡 Why does this comparison matter?
+    </button>
+    <div class="reveal-content" id="act1-key">
+      <div class="rule-box">
+        <p style="font-size:0.95rem;font-weight:700;color:var(--warp);">Understanding different cultures helps us <strong>acknowledge our similarities</strong> and <strong>respect our differences</strong>. As the textbook says: "The more we know and understand about other cultures, the easier it is for us to show them tolerance and respect."</p>
+      </div>
+    </div>
+
+    <div class="tnote"><span class="tnote-lbl">🎓 Teacher Note</span>Students can discuss which element surprised them most. <strong>Time: 8 min</strong></div>
+    <div class="nav-arrows">
+      <button class="nav-arrow-btn" onclick="goTo(1)">← Back</button>
+      <button class="nav-arrow-btn" onclick="goTo(3)">Next: Activity 2 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== S3: ACTIVITY 2 — Sheikh Mohammed Quote ===================== -->
+<div class="section-card" id="sec-3" style="--thread:var(--viridian)">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--viridian-lt);color:var(--viridian)">📰</div>
+    <div class="card-title-wrap">
+      <div class="card-title-ar">النشاط الثاني — اليوم العالمي للتسامح</div>
+      <div class="card-title">Activity 2 — International Tolerance Day</div>
+    </div>
+    <span class="time-chip">⏱ 6 min</span>
+    <span class="section-number">4 / 10</span>
+  </div>
+  <div class="card-body">
+    <div class="teacher-box">
+      <div class="icon">🎤</div>
+      <div>
+        <div class="label">Teacher says</div>
+        <p>"Read this powerful quote from Sheikh Mohammed bin Rashid Al Maktoum on International Tolerance Day, November 16, 2017. Think about what it means to YOU."</p>
+      </div>
+    </div>
+
+    <div class="quote-box">
+      <span class="q-marks">"</span>
+      <p class="q-text">We should be proud of being a nation where different nationalities are living in peace and harmony. With true love and tolerance, all live and work together to build their children's future without fear of intolerance and hatred or racial discrimination or distinctions based on colour, religion, race or ethnicity.</p>
+      <span class="q-attr">— HH Sheikh Mohammed bin Rashid Al Maktoum, International Tolerance Day, 16 November 2017</span>
+    </div>
+
+    <div class="key-fact">
+      <span class="kf-icon">🌉</span>
+      <p>The pedestrian bridge over the Dubai Water Canal is officially called <strong>Tolerance Bridge</strong> — a symbol that bridges in the UAE connect humanity both literally and metaphorically.</p>
+    </div>
+
+    <p style="font-size:0.93rem;font-weight:800;color:var(--warp);margin-bottom:12px;">💭 How does this quote make you feel? Click a response!</p>
+
+    <div class="disc-list">
+      <div class="disc-item" onclick="toggleDisc(this)">
+        <span class="di-icon">😊</span>
+        <div>
+          <div>Proud to live in such a tolerant country</div>
+          <div class="disc-answer">The UAE is home to over 200 nationalities. Sheikh Mohammed's words remind us that this diversity is a strength — something to celebrate, not fear. The UAE's model of peaceful coexistence is admired worldwide.</div>
+        </div>
+      </div>
+      <div class="disc-item" onclick="toggleDisc(this)">
+        <span class="di-icon">💪</span>
+        <div>
+          <div>Inspired to be more tolerant myself</div>
+          <div class="disc-answer">Tolerance starts with each individual. If leaders set this example, it reminds us that WE can be the change. Every small act of kindness and acceptance contributes to a more tolerant society.</div>
+        </div>
+      </div>
+      <div class="disc-item" onclick="toggleDisc(this)">
+        <span class="di-icon">🤔</span>
+        <div>
+          <div>It makes me think about my own attitudes</div>
+          <div class="disc-answer">Reflecting on our own biases and snap judgements is the first step to overcoming them. As we learned in Lesson 4, awareness of prejudice is key to challenging it.</div>
+        </div>
+      </div>
+      <div class="disc-item" onclick="toggleDisc(this)">
+        <span class="di-icon">🌟</span>
+        <div>
+          <div>Hopeful for a more peaceful world</div>
+          <div class="disc-answer">If nations can model tolerance and respect, as the UAE does, it shows that peaceful coexistence between different cultures, religions and backgrounds IS possible. This hope is something we can all contribute to.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reflection-box" style="margin-top:16px;">
+      <div class="r-icon">✍️</div>
+      <p class="r-q">In your own words — what does this quote mean to you personally?</p>
+      <textarea class="refl-area" placeholder="Write your thoughts here..."></textarea>
+    </div>
+
+    <div class="tnote"><span class="tnote-lbl">🎓 Teacher Note</span>Invite 2-3 students to share their written reflection with the class. <strong>Time: 7 min</strong></div>
+    <div class="nav-arrows">
+      <button class="nav-arrow-btn" onclick="goTo(2)">← Back</button>
+      <button class="nav-arrow-btn" onclick="goTo(4)">Next: Activity 3 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== S4: ACTIVITY 3 — Do Events Help? ===================== -->
+<div class="section-card" id="sec-4" style="--thread:var(--aubergine)">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--aubergine-lt);color:var(--aubergine)">💬</div>
+    <div class="card-title-wrap">
+      <div class="card-title-ar">النشاط الثالث — هل تُعزِّز الفعاليات التسامح؟</div>
+      <div class="card-title">Activity 3 — Do Events Promote Tolerance?</div>
+    </div>
+    <span class="time-chip">⏱ 6 min</span>
+    <span class="section-number">5 / 10</span>
+  </div>
+  <div class="card-body">
+    <div class="teacher-box">
+      <div class="icon">🎤</div>
+      <div>
+        <div class="label">Teacher says</div>
+        <p>"Can events that celebrate multiculturalism actually help people overcome their prejudices? Let's explore this together with examples!"</p>
+      </div>
+    </div>
+
+    <div class="big-question" style="padding:20px;">
+      <p class="q-text" style="font-size:clamp(1rem,2.5vw,1.5rem);">🎪 Do events that celebrate multiculturalism promote tolerance and help people overcome their prejudices?</p>
+    </div>
+
+    <p style="font-size:0.93rem;font-weight:800;color:var(--warp);margin-bottom:12px;">🌍 Here are some examples from the UAE and around the world. Click each one!</p>
+
+    <div class="scenario-grid">
+      <div class="scenario-card" style="border-color:var(--warp);" onclick="toggleScenario(this)">
+        <div class="sc-top" style="background:var(--green-light);color:var(--warp);">
+          <span style="font-size:1.5rem;">🌍</span>
+          <p style="margin-top:7px;">UAE Cultural Festivals</p>
+          <p class="sc-hint" style="color:var(--warp);">👆 Click to explore</p>
+        </div>
+        <div class="sc-bottom" style="background:#bbf7d0;color:var(--warp);">
+          Events like <strong>Dubai Food Festival</strong>, <strong>Global Village</strong> and <strong>Hatta Heritage Village</strong> bring people from 200+ nationalities together. Sharing food, music, dance and crafts helps break down barriers and replace fear with curiosity and respect.
+        </div>
+      </div>
+      <div class="scenario-card" style="border-color:var(--blue);" onclick="toggleScenario(this)">
+        <div class="sc-top" style="background:var(--blue-light);color:var(--blue);">
+          <span style="font-size:1.5rem;">🎭</span>
+          <p style="margin-top:7px;">School Cultural Days</p>
+          <p class="sc-hint" style="color:var(--blue);">👆 Click to explore</p>
+        </div>
+        <div class="sc-bottom" style="background:#bfdbfe;color:#1e3a8a;">
+          When schools hold <strong>International Days</strong> — where students wear traditional dress, bring food and share stories — students learn that differences are fascinating, not frightening. Research shows students become more open-minded after such events.
+        </div>
+      </div>
+      <div class="scenario-card" style="border-color:var(--purple);" onclick="toggleScenario(this)">
+        <div class="sc-top" style="background:var(--purple-light);color:var(--purple);">
+          <span style="font-size:1.5rem;">🏅</span>
+          <p style="margin-top:7px;">International Tolerance Day</p>
+          <p class="sc-hint" style="color:var(--purple);">👆 Click to explore</p>
+        </div>
+        <div class="sc-bottom" style="background:#ddd6fe;color:#4c1d95;">
+          Observed on <strong>November 16</strong> every year, this global day promotes awareness of the dangers of intolerance and the importance of mutual respect. The UAE's Tolerance Bridge was named on this very day!
+        </div>
+      </div>
+    </div>
+
+    <button class="reveal-btn full" style="margin-top:16px;" onclick="toggleReveal('act3-ans',this)">
+      💡 So — do events REALLY make a difference?
+    </button>
+    <div class="reveal-content" id="act3-ans">
+      <div class="rule-box">
+        <p style="font-size:0.95rem;font-weight:700;color:var(--warp);margin-bottom:10px;"><strong>YES — and here's why:</strong></p>
+        <p style="font-size:0.88rem;font-weight:700;color:var(--warp);line-height:1.7;">
+          ✅ They create <strong>positive first-hand experiences</strong> with other cultures<br>
+          ✅ They replace <strong>stereotypes</strong> with real knowledge<br>
+          ✅ They build <strong>empathy</strong> — when we see ourselves in others, prejudice fades<br>
+          ✅ They show that <strong>diversity is a strength</strong>, not a threat<br>
+          ✅ They create <strong>shared memories</strong> that bond communities together
+        </p>
+      </div>
+    </div>
+
+    <div class="tps-steps" style="margin-top:16px;">
+      <div class="tps-step tps-think"><span class="step-num">🧠</span><strong>THINK</strong><br>What event at our school has helped you learn about another culture?</div>
+      <div class="tps-step tps-pair"><span class="step-num">👥</span><strong>PAIR</strong><br>Share your experience with a partner.</div>
+      <div class="tps-step tps-share"><span class="step-num">📢</span><strong>SHARE</strong><br>What new cultural event would YOU add to our school?</div>
+    </div>
+
+    <div class="tnote"><span class="tnote-lbl">🎓 Teacher Note</span>Take note of students' event ideas — some could become real school initiatives! <strong>Time: 8 min</strong></div>
+    <div class="nav-arrows">
+      <button class="nav-arrow-btn" onclick="goTo(3)">← Back</button>
+      <button class="nav-arrow-btn" onclick="goTo(5)">Next: Walking Debate →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== S5: WALKING DEBATE ===================== -->
+<div class="section-card" id="sec-5" style="--thread:var(--indigo)">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--indigo-lt);color:var(--indigo)">🗳️</div>
+    <div class="card-title-wrap">
+      <div class="card-title-ar">النشاط الرابع — مناظرة متحركة</div>
+      <div class="card-title">Activity 4 — Walking Debate!</div>
+    </div>
+    <span class="time-chip">⏱ 8 min</span>
+    <span class="section-number">6 / 10</span>
+  </div>
+  <div class="card-body">
+    <div class="teacher-box">
+      <div class="icon">🎤</div>
+      <div>
+        <div class="label">Teacher says</div>
+        <p>"Vote with your feet! Move to YES, NO or MAYBE. Remember — in this subject there are NO right or wrong answers, and you can change your mind at any time!"</p>
+      </div>
+    </div>
+
+    <p style="font-size:0.9rem;font-weight:700;color:var(--slate);margin-bottom:18px;line-height:1.6;">For each statement below, choose YES, NO or MAYBE. Click your answer to see what others might think!</p>
+
+    <!-- Statement 1 -->
+    <div style="background:#f8fafc;border:2px solid #DDE1E8;border-radius:14px;padding:18px;margin-bottom:16px;">
+      <p style="font-size:1rem;font-weight:800;color:var(--slate);margin-bottom:12px;">🗣️ "Our school already does a great job of celebrating cultural diversity."</p>
+      <div class="debate-grid" style="grid-template-columns:repeat(3,1fr);gap:10px;">
+        <div class="debate-option debate-yes" onclick="selectDebate(this,'db1')">✅ YES<br><span style="font-size:0.75rem;font-weight:700;">Agree</span></div>
+        <div class="debate-option debate-no" onclick="selectDebate(this,'db1')">❌ NO<br><span style="font-size:0.75rem;font-weight:700;">Disagree</span></div>
+        <div class="debate-option debate-maybe" onclick="selectDebate(this,'db1')">🤔 MAYBE<br><span style="font-size:0.75rem;font-weight:700;">Not sure</span></div>
+      </div>
+      <div class="reveal-content" id="db1">
+        <div class="tip"><p style="font-size:0.88rem;font-weight:700;color:var(--warp);">💡 <strong>Think about:</strong> What events, lessons or displays at your school celebrate different cultures? What else could be done? Could you suggest something to your teacher?</p></div>
+      </div>
+    </div>
+
+    <!-- Statement 2 -->
+    <div style="background:#f8fafc;border:2px solid #DDE1E8;border-radius:14px;padding:18px;margin-bottom:16px;">
+      <p style="font-size:1rem;font-weight:800;color:var(--slate);margin-bottom:12px;">🗣️ "Learning about other cultures in class can change how you feel about them."</p>
+      <div class="debate-grid" style="grid-template-columns:repeat(3,1fr);gap:10px;">
+        <div class="debate-option debate-yes" onclick="selectDebate(this,'db2')">✅ YES<br><span style="font-size:0.75rem;font-weight:700;">Agree</span></div>
+        <div class="debate-option debate-no" onclick="selectDebate(this,'db2')">❌ NO<br><span style="font-size:0.75rem;font-weight:700;">Disagree</span></div>
+        <div class="debate-option debate-maybe" onclick="selectDebate(this,'db2')">🤔 MAYBE<br><span style="font-size:0.75rem;font-weight:700;">Not sure</span></div>
+      </div>
+      <div class="reveal-content" id="db2">
+        <div class="tip"><p style="font-size:0.88rem;font-weight:700;color:var(--warp);">💡 <strong>Research says YES:</strong> Studies show that students who learn about other cultures are significantly more tolerant. Knowledge replaces fear and stereotypes with curiosity and respect.</p></div>
+      </div>
+    </div>
+
+    <!-- Statement 3 -->
+    <div style="background:#f8fafc;border:2px solid #DDE1E8;border-radius:14px;padding:18px;margin-bottom:16px;">
+      <p style="font-size:1rem;font-weight:800;color:var(--slate);margin-bottom:12px;">🗣️ "Everyone — teachers, students and parents — should be involved in promoting tolerance."</p>
+      <div class="debate-grid" style="grid-template-columns:repeat(3,1fr);gap:10px;">
+        <div class="debate-option debate-yes" onclick="selectDebate(this,'db3')">✅ YES<br><span style="font-size:0.75rem;font-weight:700;">Agree</span></div>
+        <div class="debate-option debate-no" onclick="selectDebate(this,'db3')">❌ NO<br><span style="font-size:0.75rem;font-weight:700;">Disagree</span></div>
+        <div class="debate-option debate-maybe" onclick="selectDebate(this,'db3')">🤔 MAYBE<br><span style="font-size:0.75rem;font-weight:700;">Not sure</span></div>
+      </div>
+      <div class="reveal-content" id="db3">
+        <div class="tip"><p style="font-size:0.88rem;font-weight:700;color:var(--warp);">💡 <strong>This is what "Whole School Approach" means:</strong> Tolerance isn't just a lesson — it's a culture. When EVERYONE models it, it becomes the norm. Teachers set the tone, students lead by example, parents reinforce it at home.</p></div>
+      </div>
+    </div>
+
+    <div class="tnote"><span class="tnote-lbl">🎓 Teacher Note</span>Encourage students to defend their positions. The goal is to practise respectful disagreement. <strong>Time: 7 min</strong></div>
+    <div class="nav-arrows">
+      <button class="nav-arrow-btn" onclick="goTo(4)">← Back</button>
+      <button class="nav-arrow-btn" onclick="goTo(6)">Next: Project Presentations →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== S6: PROJECT PRESENTATIONS ===================== -->
+<div class="section-card" id="sec-6" style="--thread:var(--saffron)">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--saffron-lt);color:var(--saffron)">🎤</div>
+    <div class="card-title-wrap">
+      <div class="card-title-ar">النشاط الخامس — عروض مشروع الثقافة</div>
+      <div class="card-title">Activity 5 — Culture Project Presentations!</div>
+    </div>
+    <span class="time-chip">⏱ 8 min</span>
+    <span class="section-number">7 / 10</span>
+  </div>
+  <div class="card-body">
+    <div class="teacher-box">
+      <div class="icon">🎤</div>
+      <div>
+        <div class="label">Teacher says</div>
+        <p>"This is the moment you've been preparing for! Each group will now present their culture project. Be respectful, ask good questions, and be curious!"</p>
+      </div>
+    </div>
+
+    <div class="big-question" style="padding:20px;">
+      <p class="q-text" style="font-size:clamp(1rem,2.5vw,1.5rem);">🎤 Present the project you started in Lesson 4!<br><span style="font-size:0.7em;opacity:0.85;">You listed 5 cultures — now share what you researched</span></p>
+    </div>
+
+    <p style="font-size:0.93rem;font-weight:800;color:var(--warp);margin-bottom:14px;">📋 Your presentation should cover:</p>
+
+    <div class="action-grid">
+      <div class="action-card" style="background:var(--green-light);border-color:var(--green);color:var(--warp);">
+        <span class="action-icon">🗺️</span>
+        <div class="action-title">Where?</div>
+        <div class="action-desc">Where is this culture from? What country or region?</div>
+      </div>
+      <div class="action-card" style="background:var(--blue-light);border-color:var(--blue);color:#1e3a8a;">
+        <span class="action-icon">🎨</span>
+        <div class="action-title">What's Special?</div>
+        <div class="action-desc">What are 3 unique or interesting things about this culture?</div>
+      </div>
+      <div class="action-card" style="background:var(--gold-light);border-color:var(--gold-dark);color:var(--gold-dark);">
+        <span class="action-icon">🤝</span>
+        <div class="action-title">Similarities</div>
+        <div class="action-desc">What does this culture have in common with yours or Emirati culture?</div>
+      </div>
+      <div class="action-card" style="background:var(--teal-light);border-color:var(--teal);color:var(--teal);">
+        <span class="action-icon">💡</span>
+        <div class="action-title">What I Learned</div>
+        <div class="action-desc">What surprised you? What changed your thinking?</div>
+      </div>
+    </div>
+
+    <div class="key-fact" style="margin-top:16px;">
+      <span class="kf-icon">🌟</span>
+      <p>Remember: <strong>"Diversity is the one true thing we all have in common. Celebrate it every day."</strong> — Anonymous</p>
+    </div>
+
+    <div style="background:rgba(22,163,74,0.07);border:2px solid rgba(22,163,74,0.25);border-radius:14px;padding:16px 18px;margin-top:14px;">
+      <p style="font-size:0.86rem;font-weight:800;color:var(--warp);margin-bottom:10px;">👏 As an audience member, I will… ✅</p>
+      <div class="g2" style="gap:8px;">
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.83rem;color:var(--slate);font-weight:700;"><div style="width:17px;height:17px;min-width:17px;border:2px solid var(--warp);border-radius:4px;background:rgba(22,163,74,0.07);"></div>Listen respectfully without interrupting</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.83rem;color:var(--slate);font-weight:700;"><div style="width:17px;height:17px;min-width:17px;border:2px solid var(--warp);border-radius:4px;background:rgba(22,163,74,0.07);"></div>Ask at least one curious question</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.83rem;color:var(--slate);font-weight:700;"><div style="width:17px;height:17px;min-width:17px;border:2px solid var(--warp);border-radius:4px;background:rgba(22,163,74,0.07);"></div>Note something new I learned</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.83rem;color:var(--slate);font-weight:700;"><div style="width:17px;height:17px;min-width:17px;border:2px solid var(--warp);border-radius:4px;background:rgba(22,163,74,0.07);"></div>Applaud every presenter warmly!</div>
+      </div>
+    </div>
+
+    <div class="tnote"><span class="tnote-lbl">🎓 Teacher Note</span>Allow 2-3 min per group. Display a timer if needed. Celebrate ALL contributions! <strong>Time: 15 min</strong></div>
+    <div class="nav-arrows">
+      <button class="nav-arrow-btn" onclick="goTo(5)">← Back</button>
+      <button class="nav-arrow-btn" onclick="goTo(7)">Next: Quiz →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== S7: QUIZ ===================== -->
+<div class="section-card" id="sec-7" style="--thread:var(--madder)">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--madder-lt);color:var(--madder)">❓</div>
+    <div class="card-title-wrap">
+      <div class="card-title-ar">مراجعة الوحدة الرابعة — اختبار قصير</div>
+      <div class="card-title">Unit 4 Recap Quiz — How Well Do You Know It?</div>
+    </div>
+    <span class="time-chip">⏱ 5 min</span>
+    <span class="section-number">8 / 10</span>
+  </div>
+  <div class="card-body">
+    <div class="teacher-box">
+      <div class="icon">🎤</div>
+      <div>
+        <div class="label">Teacher says</div>
+        <p>"Let's test what you've learned across ALL of Unit 4! Answer individually, then we'll discuss as a class."</p>
+      </div>
+    </div>
+
+    <!-- Q1 -->
+    <div style="background:#f8fafc;border:2px solid #DDE1E8;border-radius:14px;padding:17px;margin-bottom:14px;">
+      <p class="mc-question">1️⃣ What does "tolerance" mean?</p>
+      <div class="mc-options" id="mc-q1">
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q1')">🅐 Agreeing with everyone's views and opinions</div>
+        <div class="mc-opt" onclick="checkAnswer(this,true,'mc-q1')">🅑 Accepting and respecting people who are different from you</div>
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q1')">🅒 Ignoring differences and treating everyone the same</div>
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q1')">🅓 Only mixing with people from your own culture</div>
+      </div>
+      <div class="mc-feedback" id="mc-q1-fb"></div>
+      <button class="mc-reset-btn" id="mc-q1-rst" onclick="resetMC('mc-q1')">Try Again ↺</button>
+    </div>
+
+    <!-- Q2 -->
+    <div style="background:#f8fafc;border:2px solid #DDE1E8;border-radius:14px;padding:17px;margin-bottom:14px;">
+      <p class="mc-question">2️⃣ What is a "snap judgment"?</p>
+      <div class="mc-options" id="mc-q2">
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q2')">🅐 A very careful and well-thought-out decision</div>
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q2')">🅑 A judgement made after getting to know someone well</div>
+        <div class="mc-opt" onclick="checkAnswer(this,true,'mc-q2')">🅒 A quick opinion formed before getting to know someone</div>
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q2')">🅓 A judgement based on lots of evidence and research</div>
+      </div>
+      <div class="mc-feedback" id="mc-q2-fb"></div>
+      <button class="mc-reset-btn" id="mc-q2-rst" onclick="resetMC('mc-q2')">Try Again ↺</button>
+    </div>
+
+    <!-- Q3 -->
+    <div style="background:#f8fafc;border:2px solid #DDE1E8;border-radius:14px;padding:17px;margin-bottom:14px;">
+      <p class="mc-question">3️⃣ According to the text, why did people LONG AGO develop prejudice?</p>
+      <div class="mc-options" id="mc-q3">
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q3')">🅐 Because they were naturally cruel people</div>
+        <div class="mc-opt" onclick="checkAnswer(this,true,'mc-q3')">🅑 Because they rarely travelled or met people from other places</div>
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q3')">🅒 Because they read too many newspapers</div>
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q3')">🅓 Because they had too much free time</div>
+      </div>
+      <div class="mc-feedback" id="mc-q3-fb"></div>
+      <button class="mc-reset-btn" id="mc-q3-rst" onclick="resetMC('mc-q3')">Try Again ↺</button>
+    </div>
+
+    <!-- Q4 -->
+    <div style="background:#f8fafc;border:2px solid #DDE1E8;border-radius:14px;padding:17px;margin-bottom:14px;">
+      <p class="mc-question">4️⃣ What is the UDHR?</p>
+      <div class="mc-options" id="mc-q4">
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q4')">🅐 A cultural festival in the UAE</div>
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q4')">🅑 A school programme for diversity</div>
+        <div class="mc-opt" onclick="checkAnswer(this,true,'mc-q4')">🅒 The Universal Declaration of Human Rights, adopted by the UN in 1948</div>
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q4')">🅓 A government policy about immigration</div>
+      </div>
+      <div class="mc-feedback" id="mc-q4-fb"></div>
+      <button class="mc-reset-btn" id="mc-q4-rst" onclick="resetMC('mc-q4')">Try Again ↺</button>
+    </div>
+
+    <!-- Q5 -->
+    <div style="background:#f8fafc;border:2px solid #DDE1E8;border-radius:14px;padding:17px;margin-bottom:14px;">
+      <p class="mc-question">5️⃣ What does a "Whole School Approach" to diversity mean?</p>
+      <div class="mc-options" id="mc-q5">
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q5')">🅐 Only teachers need to promote tolerance</div>
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q5')">🅑 Having one lesson about diversity per year</div>
+        <div class="mc-opt" onclick="checkAnswer(this,true,'mc-q5')">🅒 Everyone in the school community working together to create an inclusive environment</div>
+        <div class="mc-opt" onclick="checkAnswer(this,false,'mc-q5')">🅓 Making all students wear the same uniform</div>
+      </div>
+      <div class="mc-feedback" id="mc-q5-fb"></div>
+      <button class="mc-reset-btn" id="mc-q5-rst" onclick="resetMC('mc-q5')">Try Again ↺</button>
+    </div>
+
+    <div class="tnote"><span class="tnote-lbl">🎓 Teacher Note</span>Use the quiz as a class discussion. Ask students to explain WHY an answer is wrong. <strong>Time: 6 min</strong></div>
+    <div class="nav-arrows">
+      <button class="nav-arrow-btn" onclick="goTo(6)">← Back</button>
+      <button class="nav-arrow-btn" onclick="goTo(8)">Next: Reflection →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== S8: REFLECTION / EXIT TICKET ===================== -->
+<div class="section-card" id="sec-8" style="--thread:var(--viridian)">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--viridian-lt);color:var(--viridian)">🪞</div>
+    <div class="card-title-wrap">
+      <div class="card-title-ar">بطاقة الخروج — كيف أشعر؟</div>
+      <div class="card-title">Exit Ticket — How Am I Feeling?</div>
+    </div>
+    <span class="time-chip">⏱ 2 min</span>
+    <span class="section-number">9 / 10</span>
+  </div>
+  <div class="card-body">
+    <div class="teacher-box">
+      <div class="icon">🎤</div>
+      <div>
+        <div class="label">Teacher says</div>
+        <p>"Before we finish Unit 4, let's reflect. Be honest — this helps YOU and helps ME plan better lessons!"</p>
+      </div>
+    </div>
+
+    <div class="reflection-box">
+      <div class="r-icon">💭</div>
+      <p class="r-q">The most interesting thing I learned in Unit 4 is...</p>
+      <textarea class="refl-area" placeholder="Write your thought here..."></textarea>
+    </div>
+
+    <div class="reflection-box" style="margin-top:14px;">
+      <div class="r-icon">🌍</div>
+      <p class="r-q">One thing I will do differently after this unit is...</p>
+      <textarea class="refl-area" placeholder="Write your thought here..."></textarea>
+    </div>
+
+    <p style="font-size:0.93rem;font-weight:800;color:var(--warp);margin-top:18px;margin-bottom:12px;">🚦 How confident do I feel about Unit 4? Click to choose!</p>
+    <div class="exit-grid">
+      <div class="exit-card" style="background:var(--viridian-lt);border-color:var(--green);" onclick="selectExit(this,'got-it')">
+        <span class="exit-icon">🟢</span>
+        <div class="exit-label" style="color:var(--warp);">I Got It!</div>
+        <div class="exit-sub" style="color:var(--warp);">I understand tolerance and diversity — I'm ready!</div>
+      </div>
+      <div class="exit-card" style="background:var(--gold-light);border-color:var(--gold-dark);" onclick="selectExit(this,'almost')">
+        <span class="exit-icon">🟡</span>
+        <div class="exit-label" style="color:var(--gold-dark);">Almost There</div>
+        <div class="exit-sub" style="color:var(--gold-dark);">I understand most of it, but have a question.</div>
+      </div>
+      <div class="exit-card" style="background:var(--red-light);border-color:var(--red);" onclick="selectExit(this,'lost')">
+        <span class="exit-icon">🔴</span>
+        <div class="exit-label" style="color:var(--red-dark);">Need Help</div>
+        <div class="exit-sub" style="color:var(--red-dark);">I'm a bit confused and need more support.</div>
+      </div>
+    </div>
+    <div id="exitConfirm" class="exit-confirm"></div>
+
+    <div style="background:rgba(22,163,74,0.07);border:2px solid rgba(22,163,74,0.25);border-radius:14px;padding:14px 18px;margin-top:16px;">
+      <p style="font-size:0.86rem;font-weight:800;color:var(--warp);margin-bottom:10px;">By the end of Unit 4, I can… ✅</p>
+      <div class="g2" style="gap:8px;">
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.83rem;color:var(--slate);font-weight:700;"><div style="width:17px;height:17px;min-width:17px;border:2px solid var(--warp);border-radius:4px;background:rgba(22,163,74,0.07);"></div>Explain what cultural diversity means</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.83rem;color:var(--slate);font-weight:700;"><div style="width:17px;height:17px;min-width:17px;border:2px solid var(--warp);border-radius:4px;background:rgba(22,163,74,0.07);"></div>Describe what tolerance looks like in society</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.83rem;color:var(--slate);font-weight:700;"><div style="width:17px;height:17px;min-width:17px;border:2px solid var(--warp);border-radius:4px;background:rgba(22,163,74,0.07);"></div>Recognise and challenge prejudice</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.83rem;color:var(--slate);font-weight:700;"><div style="width:17px;height:17px;min-width:17px;border:2px solid var(--warp);border-radius:4px;background:rgba(22,163,74,0.07);"></div>Show how schools can promote inclusion</div>
+      </div>
+    </div>
+
+    <div class="tnote"><span class="tnote-lbl">🎓 Teacher Note</span>Collect exit tickets. Use red responses to identify students needing extra support. <strong>Time: 5 min</strong></div>
+    <div class="nav-arrows">
+      <button class="nav-arrow-btn" onclick="goTo(7)">← Back</button>
+      <button class="nav-arrow-btn" onclick="goTo(9)">Next: Well Done! →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== S9: WELL DONE ===================== -->
+<div class="section-card" id="sec-9" style="--thread:var(--aubergine)">
+  <div class="card-header">
+    <div class="card-icon" style="background:var(--aubergine-lt);color:var(--aubergine)">🌟</div>
+    <div class="card-title-wrap">
+      <div class="card-title-ar">أحسنتم! اكتملت الوحدة الرابعة</div>
+      <div class="card-title">Well Done! Unit 4 Complete! 🎉</div>
+    </div>
+    <span class="time-chip">⏱ 1 min</span>
+    <span class="section-number">10 / 10</span>
+  </div>
+  <div class="card-body">
+    <div class="celebrate">
+      <div style="font-size:clamp(48px,8vw,86px);margin-bottom:12px;">🌍🤝🌟</div>
+      <p style="font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:clamp(2rem,5vw,3.3rem);color:#fff;margin-bottom:8px;">Outstanding Work!</p>
+      <p style="font-size:0.97rem;color:rgba(255,255,255,0.8);margin-bottom:6px;">You've completed Unit 4 — Respect and Tolerance in a Diverse Community</p>
+      <p style="font-size:0.86rem;color:rgba(255,255,255,0.65);margin-bottom:24px;">"Diversity is the one true thing we all have in common. Celebrate it every day." ✨</p>
+      <div class="g3" style="gap:12px;">
+        <div style="background:rgba(255,255,255,0.12);border-radius:14px;padding:15px;text-align:center;">
+          <div style="font-size:1.9rem;margin-bottom:5px;">🌍</div>
+          <p style="font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:1.05rem;color:#E7C87E;margin-bottom:3px;">Respect It</p>
+          <p style="font-size:0.76rem;color:rgba(255,255,255,0.5);">Every culture has value and dignity</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.12);border-radius:14px;padding:15px;text-align:center;">
+          <div style="font-size:1.9rem;margin-bottom:5px;">🤝</div>
+          <p style="font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:1.05rem;color:var(--saffron);margin-bottom:3px;">Embrace It</p>
+          <p style="font-size:0.76rem;color:rgba(255,255,255,0.5);">Differences make our world richer</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.12);border-radius:14px;padding:15px;text-align:center;">
+          <div style="font-size:1.9rem;margin-bottom:5px;">🌟</div>
+          <p style="font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:1.05rem;color:#F0B3A8;margin-bottom:3px;">Celebrate It</p>
+          <p style="font-size:0.76rem;color:rgba(255,255,255,0.5);">Be the bridge, not the wall</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-arrows">
+      <button class="nav-arrow-btn" onclick="goTo(8)">← Back</button>
+      <button class="nav-arrow-btn" onclick="goTo(0)">↩ Start Again</button>
+    </div>
+  </div>
+</div>
+
+</main>
+<footer>✦ Moral, Social & Cultural Studies · Year 7 · Unit 4 · Lesson 5 — Whole School Approach to Cultural Diversity ✦ &nbsp;|&nbsp; Smart Board Ready &nbsp;|&nbsp; إعداد المعلمة: غادة مرتضى</footer>
+
+<script>
+// Wait for DOM
+document.addEventListener('DOMContentLoaded', function() {
+  init();
+});
+// Also run immediately in case DOMContentLoaded already fired
+if (document.readyState !== 'loading') {
+  init();
+}
+
+var cur = 0;
+var N = 0;
+
+function init() {
+  N = document.querySelectorAll('.section-card').length;
+  buildWarp();
+  updateClock();
+  goTo(0);
+}
+
+var THREAD_COLORS = ['--indigo','--saffron','--madder','--viridian','--aubergine',
+                    '--indigo','--saffron','--madder','--viridian','--aubergine'];
+var THREAD_MINS = [3,5,6,6,6,8,8,5,2,1];
+
+function buildWarp() {
+  var w = document.getElementById('warp');
+  if (!w) return;
+  w.innerHTML = '';
+  for (var i = 0; i < THREAD_COLORS.length; i++) {
+    var t = document.createElement('div');
+    t.className = 'thread';
+    t.dataset.i = i;
+    w.appendChild(t);
+  }
+}
+
+function paintWarp(idx) {
+  var threads = document.querySelectorAll('.thread');
+  var mins = 0;
+  threads.forEach(function(t, i) {
+    t.classList.remove('woven', 'active');
+    if (i < idx)  { t.classList.add('woven');  t.style.background = 'var(' + THREAD_COLORS[i] + ')'; }
+    else if (i === idx) { t.classList.add('active'); t.style.background = 'var(' + THREAD_COLORS[i] + ')'; }
+    else { t.style.background = ''; }
+    if (i <= idx) mins += THREAD_MINS[i];
+  });
+  var note = document.getElementById('weaveNote');
+  if (note) note.textContent = (idx + 1) + (idx === 0 ? ' thread woven' : ' threads woven') + ' · ' + mins + ' min';
+}
+
+function goTo(idx) {
+  var cards = document.querySelectorAll('.section-card');
+  var btns  = document.querySelectorAll('.nav-btn');
+  N = cards.length;
+  if (idx < 0) idx = 0;
+  if (idx >= N) idx = N - 1;
+  cur = idx;
+  cards.forEach(function(s, i) { s.style.display = (i === idx) ? 'block' : 'none'; });
+  btns.forEach(function(b, i) { b.classList.toggle('active', i === idx); });
+  var lbl = document.getElementById('progressLabel');
+  if (lbl) lbl.textContent = 'Section ' + (idx + 1) + ' of ' + N;
+  paintWarp(idx);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ── LESSON CLOCK ── */
+var clockSeconds = 50 * 60;
+var clockInterval = null;
+
+function fmt(s) {
+  var m = Math.floor(s / 60), r = s % 60;
+  return (m < 10 ? '0' : '') + m + ':' + (r < 10 ? '0' : '') + r;
+}
+function updateClock() {
+  var d = document.getElementById('clockDisplay');
+  var bar = document.getElementById('clockBar');
+  if (d) d.textContent = fmt(clockSeconds);
+  if (!bar) return;
+  bar.classList.remove('warning', 'danger');
+  if (clockSeconds <= 60) bar.classList.add('danger');
+  else if (clockSeconds <= 5 * 60) bar.classList.add('warning');
+}
+function startClock() {
+  if (clockInterval) return;
+  clockInterval = setInterval(function() {
+    if (clockSeconds <= 0) { pauseClock(); return; }
+    clockSeconds--;
+    updateClock();
+  }, 1000);
+}
+function pauseClock() { clearInterval(clockInterval); clockInterval = null; }
+function resetClock() { pauseClock(); clockSeconds = 50 * 60; updateClock(); }
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowRight' && cur < N - 1) goTo(cur + 1);
+  if (e.key === 'ArrowLeft'  && cur > 0)     goTo(cur - 1);
+});
+
+function toggleReveal(id, btn) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var shown = el.classList.toggle('shown');
+  if (btn) {
+    if (!btn.dataset.orig) btn.dataset.orig = btn.innerHTML;
+    btn.innerHTML = shown
+      ? btn.dataset.orig.replace('💡','✅').replace('👁️','✅').replace('Show','Hide').replace('Reveal','Hide')
+      : btn.dataset.orig;
+  }
+}
+
+function flipCard(el) { el.classList.toggle('flipped'); }
+
+function toggleScenario(card) {
+  var b = card.querySelector('.sc-bottom');
+  var shown = b.classList.toggle('shown');
+  var h = card.querySelector('.sc-hint');
+  if (h) h.textContent = shown ? '👆 Click to close' : '👆 Click to explore';
+}
+
+function checkAnswer(opt, correct, gid) {
+  var parent = document.getElementById(gid);
+  parent.querySelectorAll('.mc-opt').forEach(function(o) { o.classList.add('disabled'); });
+  opt.classList.add(correct ? 'correct' : 'wrong');
+  if (!correct) {
+    parent.querySelectorAll('.mc-opt').forEach(function(o) {
+      if (o.getAttribute('onclick') && o.getAttribute('onclick').indexOf('true') !== -1)
+        o.classList.add('correct');
+    });
+  }
+  var fb = document.getElementById(gid + '-fb');
+  if (fb) {
+    fb.className = 'mc-feedback show ' + (correct ? 'good' : 'bad');
+    fb.textContent = correct ? '✅ Correct! Well done!' : '❌ Not quite — see the highlighted correct answer.';
+  }
+  var rst = document.getElementById(gid + '-rst');
+  if (rst) rst.className = 'mc-reset-btn show';
+}
+
+function resetMC(gid) {
+  document.getElementById(gid).querySelectorAll('.mc-opt').forEach(function(o) {
+    o.classList.remove('correct','wrong','disabled');
+  });
+  var fb = document.getElementById(gid + '-fb');
+  if (fb) fb.className = 'mc-feedback';
+  var rst = document.getElementById(gid + '-rst');
+  if (rst) rst.className = 'mc-reset-btn';
+}
+
+function toggleDisc(item) {
+  var a = item.querySelector('.disc-answer');
+  if (a) a.classList.toggle('shown');
+}
+
+function selectExit(card, type) {
+  document.querySelectorAll('.exit-card').forEach(function(c) { c.classList.remove('selected'); });
+  card.classList.add('selected');
+  var c = document.getElementById('exitConfirm');
+  if (!c) return;
+  c.className = 'exit-confirm show';
+  var msgs = {
+    'got-it': '🌟 Excellent! You are ready for Unit 5. Great work today!',
+    'almost': '🤔 Well done! Write your question and ask at the start of Unit 5.',
+    'lost':   '🙋 No worries — your teacher will help you revisit this. Keep going!'
+  };
+  c.innerHTML = '<p class="conf-msg">' + msgs[type] + '</p>';
+}
+
+function selectDebate(btn, debateId) {
+  var parent = btn.parentElement;
+  parent.querySelectorAll('.debate-option').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  var reveal = document.getElementById(debateId);
+  if (reveal) reveal.classList.add('shown');
+}
+</script>
+</body>
+</html>
